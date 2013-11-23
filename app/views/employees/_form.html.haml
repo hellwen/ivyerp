@@ -1,0 +1,38 @@
+= simple_form_for @employee do |f|
+  .row-fluid
+    .span6
+      = f.input :code
+      = f.association :department
+      = f.input :sex, :as => :select, :collection => { t('sex.male') => Employee::MALE, t('sex.female') => Employee::FEMALE }
+      = f.input :mobile
+      = f.input :email
+    .span6
+      = f.input :name
+      = f.association :job
+      = f.input :phone
+      = f.input :office_location
+    .span6
+
+  %ur.nav.nav-tabs
+    %li.active
+      %a{ :href => "#Personal", "data-toggle" => "tab" }= t('application.Hellwen')
+
+  .tab-content
+    %div{ :class => "tab-pane active", :id => "Personal" }
+      .row-fluid
+        .span6
+          = f.input :id_card
+          = f.input :date_of_birth, :as => :date_field
+        .span6
+          = f.input :home_addr
+          = f.input :date_of_leaved, :as => :date_field
+
+  %ur.nav.nav-tabs
+    %li.active
+      %a= t('application.HellwenA')
+      .row-fluid
+        .span6
+          = f.input :remark
+
+  .form-actions
+    = f.button :submit

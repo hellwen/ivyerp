@@ -1,0 +1,6 @@
+%tr[employee]
+  %td= employee.code
+  %td= employee.name
+  %td.action-links
+    = list_link_for(:edit, employee)
+    = list_link_for(:delete, employee)

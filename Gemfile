@@ -1,45 +1,194 @@
+# Settings
+# ========
 source 'http://ruby.taobao.org'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+# Rails
+# =====
+gem 'rails', '~> 3.2.14' # Because it makes sense, and bundler fails otherwise
+gem 'unicorn'
 
-# Use sqlite3 as the database for Active Record
+# Database
+# gem 'mysql2'
 gem 'sqlite3'
+# gem 'pg'
 
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
-
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-gem 'therubyracer', platforms: :ruby
-
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
-
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'sass-rails'
+  gem 'sprockets'
+  gem 'coffee-rails'
+  gem 'uglifier'
+  gem 'compass-rails'
+end
+group :production do
+  gem 'therubyracer', '= 0.11.4' # Fix build problems
+  gem 'libv8'
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
-# Use unicorn as the app server
-# gem 'unicorn'
+# Development
+# ===========
+group :development do
+  # RDoc
+  gem 'rdoc'
 
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
+  # UML documentation
+  gem 'rails-erd'
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+  # Haml generators
+  gem 'haml-rails'
+  gem 'hpricot'
+  gem 'ruby_parser'
+
+  # Capistrano
+  gem 'capones_recipes'
+  gem 'capistrano-rbenv'
+
+  # Debugger
+  gem 'ruby-debug', :platforms => :ruby_18
+
+  # Console
+  gem 'pry-rails'
+  gem 'pry-doc'
+end
+
+group :test, :development do
+  # Framework
+  gem 'rspec-rails'
+
+  # Matchers/Helpers
+  gem 'shoulda-matchers'
+  gem 'json_spec'
+
+  # Fixtures
+  gem 'factory_girl_rails'
+  gem 'factory_girl'
+
+  # Browser
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'poltergeist'
+
+  # Code coverage
+  gem 'rcov', :platforms => :ruby_18
+  gem 'simplecov', :require => false, :platforms => :ruby_19
+
+  gem 'database_cleaner'
+end
+
+group :tools do
+  # Guard
+  gem 'guard-rspec'
+  gem 'guard-zeus'
+
+  gem 'rb-inotify'
+end
+
+# Standard helpers
+# ================
+gem 'haml'
+
+# Navigation
+gem 'simple-navigation'
+
+# Styling
+gem 'lyb_sidebar'
+gem 'anjlab-bootstrap-rails', '~>2.1.0', :require => 'bootstrap-rails'
+gem 'bootstrap-will_paginate'
+
+# Form framework
+gem 'simple_form'
+gem 'select2-rails'
+
+# CRUD
+gem 'will_paginate'
+gem 'inherited_resources'
+gem 'has_scope'
+gem 'i18n_rails_helpers'
+gem 'responders'
+
+# Access Control
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'faraday'
+gem 'cancan', '1.6.8' # issue regarding alias and real action name
+gem 'lyb_devise_admin'
+gem 'apartment'
+
+# API
+gem 'versionist'
+gem 'active_model_serializers'
+
+gem 'api_taster', '0.6.0'
+
+# Date/Time handling
+gem 'validates_timeliness'
+
+gem 'show_for'
+
+# Locale setting
+gem 'routing-filter'
+
+# Application Settings
+gem 'ledermann-rails-settings', '~> 1.1.0', :require => 'rails-settings' # incompatible changes
+
+# Bookyt
+# ======
+# Accounting
+gem 'has_accounts'
+gem 'has_accounts_engine'
+
+# Addresses
+gem 'has_vcards'
+
+# Uploads
+gem 'carrierwave'
+
+# In-Place Edit
+gem 'best_in_place'
+
+# PDF generation
+gem 'pdfkit'
+gem 'wkhtmltopdf-binary'
+
+gem 'prawn'
+gem 'prawn_rails'
+
+# Raiffeisen BookingImport
+gem 'fastercsv', :platforms => :ruby_18
+gem 'csv-mapper'
+
+gem 'mt940_parser', :require => 'mt940'
+
+# ESR support
+gem 'aasm'
+gem 'vesr'
+
+# Search
+gem 'pg_search'
+
+# Tagging
+gem 'acts-as-taggable-on'
+
+# Tracking of demo
+group :demo do
+  gem 'rack-google_analytics'
+end
+
+# Monitoring
+# ==========
+gem 'settingslogic'
+group :demo do
+  # Traffic
+  gem 'rack-google_analytics'
+
+  # Performance
+  #gem 'newrelic_rpm'
+
+  # Exceptions
+  #gem 'airbrake'
+end

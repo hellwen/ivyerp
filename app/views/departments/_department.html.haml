@@ -1,0 +1,6 @@
+%tr[department]
+  %td= department._name
+  %td= department.descript 
+  %td.action-links
+    = list_link_for(:edit, department)
+    = list_link_for(:delete, department)
