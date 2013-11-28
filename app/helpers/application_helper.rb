@@ -29,11 +29,11 @@ module ApplicationHelper
 
   # CRUD helpers
   def icon_edit_link_to(path)
-    link_to t('ivyerp.edit'), path, :method => :get, :class => 'icon-edit-text', :title => t('ivyerp.edit')
+    link_to t('ivyerp.edit'), path, :method => :get, :class => 'icon-pencil', :title => t('ivyerp.edit')
   end
 
   def icon_delete_link_to(model, path)
-    link_to t('ivyerp.destroy'), path, :remote => true, :method => :delete, :confirm => t_confirm_delete(model), :class => 'icon-delete-text', :title => t('ivyerp.destroy')
+    link_to t('ivyerp.destroy'), path, :remote => true, :method => :delete, :confirm => t_confirm_delete(model), :class => 'icon-delete', :title => t('ivyerp.destroy')
   end
 
   def list_item_actions_for(resource)

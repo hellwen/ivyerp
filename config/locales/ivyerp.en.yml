@@ -294,6 +294,9 @@ en:
       departments: Departments
       employee: Employees
 
+      sd: SD 
+      customers: Customers
+
       settings: Settings
 
       account_types: "account types"
@@ -506,9 +509,9 @@ en:
       address: address
       book_keeping: "book keeping"
       invoicing: Billing preferences
-    person:
-      address: Address
-      civil: Particulars
+    employee:
+      private: Private
+      other: Other
   helpers:
     submit:
       create: "%{model} create"
@@ -567,6 +570,9 @@ en:
       overall: overall
       saldo_of: Sum
       x: x
+    new_position: "New Position"
+    new_subtotal: "New Subtotal"
+  line_shippings:
     new_position: "New Position"
     new_subtotal: "New Subtotal"
   number:

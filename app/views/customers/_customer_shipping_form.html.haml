@@ -1,0 +1,3 @@
+= simple_fields_for @customer do |customer|
+  = customer.fields_for :customer_shippings, @customer_shipping, :child_index => -(DateTime.now.to_i) do |customer_shipping|
+    = render "#{customer_shipping.object.class.name.underscore.pluralize}/form", :customer_shipping => customer_shipping

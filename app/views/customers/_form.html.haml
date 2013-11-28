@@ -1,0 +1,11 @@
+= simple_form_for resource do |f|
+  .row-fluid
+    .span6= f.input :code
+    .span6= f.input :name
+  .row-fluid
+    .span12= f.input :remark, :input_html => {:rows => 4}
+
+  = render 'customer_shippings/list_form', :f => f, :customer => resource
+
+  .form-actions
+    = f.button :submit, :class => 'btn-primary'

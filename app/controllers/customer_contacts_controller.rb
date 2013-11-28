@@ -1,0 +1,2 @@
+class CustomerContactsController < AuthorizedController
+end

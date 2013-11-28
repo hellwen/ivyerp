@@ -1,0 +1,8 @@
+%table.table.table-striped.customers.collection
+  %thead
+    %tr
+      %th= t_attr :code
+      %th= t_attr :name
+      %th.action-links
+  %tbody
+    = render @customers

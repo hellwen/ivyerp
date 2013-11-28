@@ -18,6 +18,10 @@ SimpleNavigation::Configuration.run do |navigation|
       hr.item :employees, t('ivyerp.main_navigation.employees'), employees_path
     end
 
+    primary.item :sd, t('ivyerp.main_navigation.sd'), '#' do |sd|
+      sd.item :customers, t('ivyerp.main_navigation.customers'), customers_path
+    end
+
     # Hack to get engine navigations included
     Ivyerp::Engine.setup_navigation(self, primary)
   end

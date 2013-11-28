@@ -13,26 +13,19 @@
       = f.input :office_location
     .span6
 
-  %ur.nav.nav-tabs
-    %li.active
-      %a{ :href => "#Personal", "data-toggle" => "tab" }= t('application.Hellwen')
+  %h3= t('form.employee.private') 
+  .row-fluid
+    .span6
+      = f.input :id_card
+      = f.input :date_of_birth, :as => :date_field
+    .span6
+      = f.input :home_addr
+      = f.input :date_of_leaved, :as => :date_field
 
-  .tab-content
-    %div{ :class => "tab-pane active", :id => "Personal" }
-      .row-fluid
-        .span6
-          = f.input :id_card
-          = f.input :date_of_birth, :as => :date_field
-        .span6
-          = f.input :home_addr
-          = f.input :date_of_leaved, :as => :date_field
-
-  %ur.nav.nav-tabs
-    %li.active
-      %a= t('application.HellwenA')
-      .row-fluid
-        .span6
-          = f.input :remark
+  %h3= t('form.employee.other')
+  .row-fluid
+    .span6
+      = f.input :remark
 
   .form-actions
-    = f.button :submit
+    = f.button :submit, :class => 'btn btn-primary btn-large'

@@ -1,0 +1,9 @@
+%h3= t('title.customer_shippings')
+%table#customer_shippings.table.table-striped{'data-direct-account-id' => 1, 'data-direct-account-factor' => 1}
+  %thead
+    = render 'customer_shippings/list_header', :customer => customer
+  %tbody.sortable
+    = f.simple_fields_for :customer_shippings do |customer_shipping|
+      = render "#{customer_shipping.object.class.name.underscore.pluralize}/form", :customer_shipping => customer_shipping
+  %tfoot
+    = render 'customer_shippings/list_footer'

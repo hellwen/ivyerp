@@ -23,6 +23,23 @@ Ivyerp::Application.routes.draw do
   resources :employees do
   end
 
+  resources :customers do
+    member do
+      get :letter
+      get :copy
+    end
+
+    #resources :customer_shippings
+    member do
+      get :new_customer_shipping
+    end
+    collection do
+      get :new_customer_shipping
+    end
+  end
+
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
