@@ -1,2 +1,0 @@
-module CustomerShippingHelper
-end

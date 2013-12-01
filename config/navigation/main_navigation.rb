@@ -3,23 +3,31 @@ SimpleNavigation::Configuration.run do |navigation|
   navigation.selected_class = 'active'
   navigation.autogenerate_item_ids = false
 
-  def account_item(parent, code)
-    account = Account.find_by_code(code)
-    return unless account
-
-    parent.item "account_#{code}", account.to_s, account_path(account)
-  end
-
   # Define the primary navigation
   navigation.items do |primary|
     primary.item :hr, t('ivyerp.main_navigation.hr'), '#' do |hr|
+      hr.item :employees, t('ivyerp.main_navigation.employees'), employees_path
+
+      hr.item :divider_two, "", :class => 'divider'
+
       hr.item :jobs, t('ivyerp.main_navigation.jobs'), jobs_path
       hr.item :departments, t('ivyerp.main_navigation.departments'), departments_path
-      hr.item :employees, t('ivyerp.main_navigation.employees'), employees_path
     end
 
     primary.item :sd, t('ivyerp.main_navigation.sd'), '#' do |sd|
       sd.item :customers, t('ivyerp.main_navigation.customers'), customers_path
+    end
+
+    primary.item :mm, t('ivyerp.main_navigation.mm'), '#' do |mm|
+      mm.item :products, t('ivyerp.main_navigation.products'), products_path
+    end
+
+    primary.item :im, t('ivyerp.main_navigation.im'), '#' do |im|
+      im.item :stocks, t('ivyerp.main_navigation.stocks'), stocks_path
+
+      im.item :divider_two, "", :class => 'divider'
+
+      im.item :stock_locations, t('ivyerp.main_navigation.stock_locations'), stock_locations_path
     end
 
     # Hack to get engine navigations included

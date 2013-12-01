@@ -13,10 +13,24 @@ class CustomersController < AuthorizedController
       @customer = resource_class.new
     end
 
-    @shipping = CustomerShipping.new()
-    @customer.customer_shippings << @shipping
+    @customer_shipping = CustomerShipping.new()
+    @customer.customer_shippings << @customer_shipping
+    
+    respond_with @customer_shipping
+  end
 
-    respond_with @shipping
+  # has_many :customer_contacts
+  def new_customer_contact
+    if customer_id = params[:id]
+      @customer = Customer.find(customer_id)
+    else
+      @customer = resource_class.new
+    end
+
+    @customer_contact = CustomerContact.new()
+    @customer.customer_contacts << @customer_contact
+
+    respond_with @customer_contact
   end
 
   def copy

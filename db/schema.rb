@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131124074612) do
+ActiveRecord::Schema.define(:version => 20131201060558) do
 
   create_table "customer_contacts", :force => true do |t|
     t.integer  "customer_id"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20131124074612) do
     t.string   "phone"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "position"
   end
 
   create_table "customer_shippings", :force => true do |t|
@@ -28,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20131124074612) do
     t.string   "address"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "position"
   end
 
   create_table "customers", :force => true do |t|
@@ -96,6 +98,19 @@ ActiveRecord::Schema.define(:version => 20131124074612) do
 
   add_index "jobs", ["name"], :name => "index_jobs_on_name", :unique => true
 
+  create_table "products", :force => true do |t|
+    t.string   "code",          :null => false
+    t.string   "name",          :null => false
+    t.integer  "customer_id"
+    t.string   "specification"
+    t.string   "remark"
+    t.integer  "active"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "products", ["code"], :name => "index_products_on_code", :unique => true
+
   create_table "roles", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
@@ -111,6 +126,43 @@ ActiveRecord::Schema.define(:version => 20131124074612) do
 
   add_index "roles_users", ["role_id"], :name => "index_roles_users_on_role_id"
   add_index "roles_users", ["user_id"], :name => "index_roles_users_on_user_id"
+
+  create_table "stock_locations", :force => true do |t|
+    t.integer  "stock_type", :null => false
+    t.string   "building",   :null => false
+    t.integer  "floor",      :null => false
+    t.string   "name",       :null => false
+    t.string   "remark"
+    t.integer  "active"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "stock_locations", ["stock_type", "building", "floor", "name"], :name => "index_stock_location", :unique => true
+
+  create_table "stock_products", :force => true do |t|
+    t.integer  "stock_id",          :null => false
+    t.integer  "product_id",        :null => false
+    t.integer  "stock_location_id", :null => false
+    t.integer  "quantity",          :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  create_table "stocks", :force => true do |t|
+    t.string   "bill_no",         :null => false
+    t.string   "spare_no"
+    t.date     "handle_date",     :null => false
+    t.integer  "stock_type"
+    t.integer  "type",            :null => false
+    t.integer  "workshop_id"
+    t.string   "handover_person"
+    t.string   "handle_person"
+    t.integer  "status",          :null => false
+    t.string   "remark"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

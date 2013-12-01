@@ -1,5 +1,7 @@
 %tr.nested-form-item[customer_shipping.object]
-  %td= customer_shipping.text_field :name, :required => true, :style => 'width: 85px'
+  %td= customer_shipping.text_field :name, :required => true, :style => 'width: 150px'
   %td= customer_shipping.text_field :address, :required => true, :style => 'width: 30em'
   %td.action_links
-    = link_to boot_icon('trash'), '#', :class => 'delete-nested-form-item'
+    = customer_shipping.hidden_field :position
+    = customer_shipping.hidden_field :_destroy
+    = link_to boot_icon('delete'), '#', :class => 'delete-nested-form-item'

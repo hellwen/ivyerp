@@ -1,0 +1,2 @@
+class StockLocationsController < AuthorizedController
+end

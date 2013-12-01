@@ -1,8 +1,0 @@
-.tabbable
-  %ul.nav.nav-tabs
-    /%li.active= link_to t_model, '#tab-contact', {:data => {:toggle => 'tab'}}
-    /%li= link_to t_model(Salary), '#tab-salaries', {:data => {:toggle => 'tab'}} if Ivyerp::Engine.engines.include?('bookyt_salary')
-
-.tab-content
-  #tab-contact.tab-pane.active= render "form"
-  /#tab-salaries.tab-pane= render 'show_salaries' if Ivyerp::Engine.engines.include?('bookyt_salary')

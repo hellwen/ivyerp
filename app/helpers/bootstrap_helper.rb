@@ -19,7 +19,13 @@ module BootstrapHelper
 
   # Icons
   def boot_icon(type)
-    content_tag(:i, '', :class => "icon-#{type}")
+    case type
+    when 'edit'
+      icon_class = "icon-pencil"
+    when 'delete'
+      icon_class = "icon-trash"
+    end
+    content_tag(:i, '', :class => icon_class)
   end
 
   # Messages

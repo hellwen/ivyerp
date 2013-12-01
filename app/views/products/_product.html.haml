@@ -1,0 +1,6 @@
+%tr[product]
+  %td= product.code
+  %td= product.name
+  %td.action-links
+    = list_link_icon_for(:edit, product)
+    = list_link_icon_for(:delete, product)

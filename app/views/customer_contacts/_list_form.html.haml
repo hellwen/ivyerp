@@ -1,0 +1,9 @@
+%h3= t('title.customer_contacts')
+%table#customer_contacts.table.table-striped
+  %thead
+    = render 'customer_contacts/list_header', :customer => customer
+  %tbody.sortable
+    = f.simple_fields_for :customer_contacts do |customer_contact|
+      = render "#{customer_contact.object.class.name.underscore.pluralize}/form", :customer_contact => customer_contact
+  %tfoot
+    = render 'customer_contacts/list_footer'

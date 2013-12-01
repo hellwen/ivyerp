@@ -1,5 +1,5 @@
 class CustomerShipping < ActiveRecord::Base
-  attr_accessible :address, :customer_id, :name
+  attr_accessible :address, :customer_id, :name, :position
 
   belongs_to :customer, :touch => true, :inverse_of => :customer_shippings
 

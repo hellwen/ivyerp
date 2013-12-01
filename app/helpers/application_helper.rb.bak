@@ -1,0 +1,131 @@
+# Methods added to this helper will be available to all templates in the application.
+module ApplicationHelper
+  # Plugins
+  def engine_stylesheet_link_tag(options = {})
+    Ivyerp::Engine.engines.map {|engine|
+      stylesheet_link_tag engine, options
+    }.join.html_safe
+  end
+
+  # Sidebar Filters
+  def define_filter(name, &block)
+    @filters ||= {}
+    # Do nothing if filter is already registered
+    return if @filters[name]
+
+    @filters[name] = true
+    content_for :sidebar do
+      yield
+    end
+  end
+
+  include ActionView::Helpers::NumberHelper
+  def currency_fmt(value)
+    # We often do get -0.0 but don't like it
+    value = 0.0 if value.to_s.match %r{^-[0.]*$}
+
+    number = number_with_precision(value, :precision => 2, :separator => '.', :delimiter => "'")
+  end
+
+  # CRUD helpers
+  def icon_edit_link_to(path)
+    link_to t('ivyerp.edit'), path, :method => :get, :class => 'icon-pencil', :title => t('ivyerp.edit')
+  end
+
+  def icon_delete_link_to(model, path)
+    link_to t('ivyerp.destroy'), path, :remote => true, :method => :delete, :confirm => t_confirm_delete(model), :class => 'icon-delete', :title => t('ivyerp.destroy')
+  end
+
+  def list_item_actions_for(resource)
+    model_name = resource.class.to_s.underscore
+
+    render 'layouts/list_item_actions_for', :model_name => model_name, :resource => resource
+  end
+
+  # Nested form helpers
+  def show_new_form(model)
+    model_name = model.to_s.underscore
+
+    output = <<EOF
+$('##{model_name}_list').replaceWith('#{escape_javascript(render('form'))}');
+addAutofocusBehaviour();
+addAutocompleteBehaviour();
+addDatePickerBehaviour();
+addAutogrowBehaviour();
+EOF
+
+    return output.html_safe
+  end
+
+  # List link helpers
+  def list_link_to(action, url, options = {})
+    options.merge!(:class => "icon-#{action}-text", :title => t_action(action))
+    
+    link_to(t_action(action), url, options)
+  end
+  
+  def list_link_for(action, resource_or_model = nil, options = {})
+    # Handle both symbols and strings
+    action = action.to_s
+    
+    # Resource and Model setup
+    # Support nested resources
+    if resource_or_model.is_a? Array
+      main_resource_or_model = resource_or_model.last
+    else
+      main_resource_or_model = resource_or_model
+    end
+    
+    # Use controller name to guess resource or model if not specified
+    case action
+    when 'new', 'index'
+      model = main_resource_or_model || controller_name.singularize.camelize.constantize
+    when 'show', 'edit', 'delete'
+      resource = main_resource_or_model || instance_variable_get("@#{controller_name.singularize}")
+      model = resource.class
+    end
+    model_name = model.to_s.underscore
+    
+    # No link if CanCan is used and current user isn't authorized to call this action
+    return if respond_to?(:can?) and cannot?(action.to_sym, model)
+    
+    # Link generation
+    case action
+    when 'index', 'show'
+      path = polymorphic_path(resource_or_model)
+    when 'delete'
+      path = polymorphic_path(resource_or_model)
+      options.merge!(:confirm => t_confirm_delete(main_resource_or_model), :method => :delete)
+    else
+      path = polymorphic_path(resource_or_model, :action => action)
+    end
+    
+    return list_link_to(action, path, options)
+  end
+  
+  def list_links_for(action = nil, resource_or_model = nil)
+    # Use current action if not specified
+    action ||= action_name
+    
+    # Handle both symbols and strings
+    action = action.to_s
+    
+    actions = []
+    case action
+    when 'new', 'create'
+      actions << 'index'
+    when 'show'
+      actions += ['edit', 'delete', 'index']
+    when 'edit', 'update'
+      actions += ['show', 'delete', 'index']
+    when 'index'
+      actions << 'new'
+    end
+    
+    links = actions.map{|link_for| contextual_link_to(link_for, resource_or_model)}
+    
+    return links.join("\n").html_safe
+  end
+
+
+end

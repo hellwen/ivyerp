@@ -1,0 +1,8 @@
+%tr.nested-form-item[customer_contact.object]
+  %td= customer_contact.text_field :title, :required => true, :style => 'width: 150px'
+  %td= customer_contact.text_field :name, :required => true, :style => 'width: 150px'
+  %td= customer_contact.text_field :phone, :required => true, :style => 'width: 23em'
+  %td.action_links
+    = customer_contact.hidden_field :position
+    = customer_contact.hidden_field :_destroy
+    = link_to boot_icon('delete'), '#', :class => 'delete-nested-form-item'

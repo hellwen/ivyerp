@@ -1,0 +1,3 @@
+%tr.customer_contact_total
+  %th{:colspan => 2}
+    = link_to t('new_position', scope: 'customer_contacts'), [:new_customer_contact, resource.persisted? ? resource : resource.class.name.underscore.pluralize.to_sym], :remote => true, :class => 'btn'

@@ -47,8 +47,8 @@ function addNestedFormBehaviour() {
     item.find(":input").not("[name$='[_destroy]'], [name$='[id]']").remove();
 
     // TODO: should be callbacks
-    updatePositions($(this).parents('.nested-form-container'));
-    updateLineItems();
+    //updatePositions($(this).parents('.nested-form-container'));
+    //updateLineItems();
 
     // Don't follow link
     event.preventDefault();
@@ -146,8 +146,8 @@ function calculateTotalAmount(lineItems) {
 }
 
 function updateLineItems() {
-  if ($('#line_items').length > 0) {
-    $('.line_item, .saldo_line_item').each(function() {
+  if ($('#customer_shippings').length > 0) {
+    $('.customer_shipping').each(function() {
       updateLineItemPrice($(this));
       updateLineItemTotalAmount($(this));
     });

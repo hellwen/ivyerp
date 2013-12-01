@@ -6,6 +6,7 @@
     .span12= f.input :remark, :input_html => {:rows => 4}
 
   = render 'customer_shippings/list_form', :f => f, :customer => resource
+  = render 'customer_contacts/list_form', :f => f, :customer => resource
 
   .form-actions
     = f.button :submit, :class => 'btn-primary'

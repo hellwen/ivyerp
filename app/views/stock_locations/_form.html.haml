@@ -1,0 +1,13 @@
+= simple_form_for @stock_location do |f|
+  .row-fluid
+    .span6= f.input :stock_type, :as => :select, :collection => { t('stock_type.product') => Stock::STOCK_TYPE_PRODUCT }
+  .row-fluid
+    .span6= f.input :building
+    .span6= f.input :floor
+  .row-fluid
+    .span12= f.input :name
+  .row-fluid
+    .span12= f.input :remark
+
+  .form-actions
+    = f.button :submit, :class => 'btn btn-primary btn-large'

@@ -2,6 +2,5 @@
   %td= customer.code
   %td= customer.name
   %td.action-links
-    = list_link_for(:edit, customer)
-    = list_link_for(:delete, customer)
-    = link_to boot_icon('trash'), '#'
+    = list_link_icon_for(:edit, customer)
+    = list_link_icon_for(:delete, customer)

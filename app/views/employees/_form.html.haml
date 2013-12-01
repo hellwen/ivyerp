@@ -1,31 +1,30 @@
 = simple_form_for @employee do |f|
   .row-fluid
-    .span6
-      = f.input :code
-      = f.association :department
-      = f.input :sex, :as => :select, :collection => { t('sex.male') => Employee::MALE, t('sex.female') => Employee::FEMALE }
-      = f.input :mobile
-      = f.input :email
-    .span6
-      = f.input :name
-      = f.association :job
-      = f.input :phone
-      = f.input :office_location
-    .span6
+    .span6= f.input :code
+    .span6= f.input :name
+  .row-fluid
+    .span6= f.association :department
+    .span6= f.association :job
+  .row-fluid
+    .span6= f.input :sex, :as => :select, :collection => { t('sex.male') => Employee::MALE, t('sex.female') => Employee::FEMALE }
+    .span6= f.input :phone
+  .row-fluid
+    .span6= f.input :mobile
+    .span6= f.input :email
+  .row-fluid
+    .span12= f.input :office_location
 
   %h3= t('form.employee.private') 
   .row-fluid
-    .span6
-      = f.input :id_card
-      = f.input :date_of_birth, :as => :date_field
-    .span6
-      = f.input :home_addr
-      = f.input :date_of_leaved, :as => :date_field
+    .span6= f.input :id_card
+    .span6= f.input :home_addr
+  .row-fluid
+    .span6= f.input :date_of_birth, :as => :date_field
+    .span6= f.input :date_of_leaved, :as => :date_field
 
   %h3= t('form.employee.other')
   .row-fluid
-    .span6
-      = f.input :remark
+    .span12= f.input :remark
 
   .form-actions
     = f.button :submit, :class => 'btn btn-primary btn-large'
