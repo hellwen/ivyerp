@@ -42,7 +42,21 @@ Ivyerp::Application.routes.draw do
   resources :products do
   end
 
-  resources :stocks do
+  resources :stock_ins do
+    member do
+      get :new_stock_product
+    end
+    collection do
+      get :new_stock_product
+    end
+  end
+  resources :stock_outs do
+    member do
+      get :new_stock_product
+    end
+    collection do
+      get :new_stock_product
+    end
   end
   resources :stock_locations do
   end

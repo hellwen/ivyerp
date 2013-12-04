@@ -1,5 +1,5 @@
 class Job < ActiveRecord::Base
-  attr_accessible :active, :descript, :name
+  attr_accessible :name, :descript
 
   def to_s
     name.present? ? name : '' 

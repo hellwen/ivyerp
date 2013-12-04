@@ -23,7 +23,8 @@ SimpleNavigation::Configuration.run do |navigation|
     end
 
     primary.item :im, t('ivyerp.main_navigation.im'), '#' do |im|
-      im.item :stocks, t('ivyerp.main_navigation.stocks'), stocks_path
+      im.item :stock_ins, t('ivyerp.main_navigation.stock_ins'), stock_ins_path
+      im.item :stock_outs, t('ivyerp.main_navigation.stock_outs'), stock_outs_path
 
       im.item :divider_two, "", :class => 'divider'
 

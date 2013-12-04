@@ -1,15 +1,20 @@
-- @attributes ||= collection.first.attribute_names - ['id', 'created_at', 'updated_at']
-%table.table.table-striped{:class => "#{collection.first.class.to_s.downcase.pluralize} collection"}
-  %thead
-    %tr
-      - @attributes.each do |field|
-        %th= t_attr field, collection.first.class
-      %th.action-links
-  %tbody
-    - collection.each do |r|
+/- @attributes ||= collection.first.attribute_names - ['id', 'created_at', 'updated_at']
+- if collection.count > 0
+  - if collection.first.respond_to? 'attr_list'
+    - @attributes ||= collection.first.attr_list 
+  - elsif collection.first.respond_to? '_accessible_attributes'
+    - @attributes ||= collection.first._accessible_attributes[:default].to_a - ['', 'id', 'created_at', 'updated_at'] 
+  %table.table.table-striped{:class => "#{collection.first.class.to_s.downcase.pluralize} collection"}
+    %thead
       %tr
         - @attributes.each do |field|
-          %td= r.send(field) if r.respond_to?(field)
-        %td.action-links
-          = list_link_for(:edit, r)
-          = list_link_for(:delete, r)
+          %th= t_attr field, collection.first.class
+        %th.action-links
+    %tbody
+      - collection.each do |r|
+        %tr
+          - @attributes.each do |field|
+            %td= r.send(field) if r.respond_to?(field)
+          %td.action-links
+            = list_link_icon_for(:edit, r)
+            = list_link_icon_for(:delete, r)

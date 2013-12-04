@@ -1,0 +1,3 @@
+= simple_fields_for @stock do |stock|
+  = stock.fields_for :stock_products, @stock_product, :child_index => -(DateTime.now.to_i) do |stock_product|
+    = render "#{stock_product.object.class.name.underscore.pluralize}/form", :stock_product => stock_product

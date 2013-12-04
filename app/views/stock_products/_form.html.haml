@@ -1,0 +1,8 @@
+%tr.nested-form-item[stock_product.object]
+  %td= stock_product.select :product_id, resource_class.available_products, {:include_blank => true}, :class => 'combobox span', :style => 'width: 400px'
+  %td= stock_product.select :stock_location_id, resource_class.available_locations, {:include_blank => true}, :class => 'combobox span', :style => 'width: 200px'
+  %td= stock_product.text_field :quantity, :required => true, :style => 'width: 30em'
+  %td.action_links
+    = stock_product.hidden_field :position
+    = stock_product.hidden_field :_destroy
+    = link_to boot_icon('delete'), '#', :class => 'delete-nested-form-item'

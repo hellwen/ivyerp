@@ -12,26 +12,12 @@ en:
       title: Journal
   activerecord:
     attributes:
-      account:
-        saldo: "Balance"
       attachment:
         code: "Use as"
         code_enum:
           DebitInvoiceDocument: Invoice template
           LetterDocument: Letter template
         file: Filename
-      booking:
-        valuta: "Value date"
-      booking_import:
-        created_at: "imported at"
-        csv: csv
-      booking_template:
-        amount_relates_to: "Amount Relates to"
-        charge_rate_code: "charge rate code"
-        credit_account: Credit
-        debit_account: Debit
-        reference: Reference
-        value_date: "Value date"
       charge_rate:
         code: code
         duration: Duration
@@ -209,34 +195,23 @@ en:
         phone_number_type: Number Type
 
     models:
+      overview: Overview
+
+      # HR
       job: Job
       department: Department
       employee: Employee
-      user: User
-      overview: Overview
-
-      attachment: Attachment
-      booking_import: "Booking import"
-      booking_template: "Booking template"
-      charge_booking_template: "Charge booking template"
-      charge_rate: "Charge rate"
-      company: Company
-      credit_invoice: "Credit invoice"
+      # SD
       customer: Customer
-      day: "Daily balance"
-      debit_invoice: "Debit invoice"
-      employment: Employment
-      esr_file: ESR-File
-      expense: Expense
-      invoice: Invoice
-      line_item: "Line Item"
-      note: Note
-      person: Person
-      project_state: Project Status
-      salary: Salary
-      session: Session
+      # MM
+      product: Product
+      # IM  
+      stock_location: Location
+      stock_in: Stock In
+      stock_out: Stock Out
+
+      user: User
       setting: Settings
-      tenant: Tenant
   alerts:
     empty: "No Entries to print"
   application:
@@ -250,7 +225,7 @@ en:
     date: Date
     duration: Duration
     remarks: Remarks
-    state: Status
+    status: Status
     title: Title
   booking_imports:
     new:
@@ -289,38 +264,24 @@ en:
       payment_no: "payment no. %{payment_no}"
     main_navigation:
       overview: Overview
+
       hr: Hr 
       jobs: Jobs
       departments: Departments
       employee: Employees
 
-      sd: SD 
+      sd: Sd 
       customers: Customers
+
+      mm: Mm
+      products: Products
+
+      im: Im
+      stocks: Stocks
+      stock_locations: Locations
 
       settings: Settings
 
-      account_types: "account types"
-      accounting: Accounting
-      accounts: Accounts
-      all: All
-      balance: "Balance sheet"
-      bookings: "Journal"
-      contacts: Contacts
-      credit_invoices: "Credit invoices"
-      debit_invoices: "Debit invoices"
-      destroy_user_session: "Log out"
-      esr_files: "VESR Journal"
-      importer: Importer
-      invoices: Invoices
-      invoicing: Invoicing
-      new_booking: "New Booking"
-      new_credit_invoice: "New Credit invoice"
-      new_debit_invoice: "New Debit invoice"
-      new_esr_file: "VESR Post"
-      new_expense: "New Expense"
-      new_user_session: "Log in"
-      profit: "Profit sheet"
-      store: Store
       tooltip:
         account_types: "list all account types (current assets, equity capital, ...)"
         accounting: "find all functions for accounting here"

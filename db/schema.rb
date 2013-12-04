@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131201060558) do
+ActiveRecord::Schema.define(:version => 20131204154632) do
 
   create_table "customer_contacts", :force => true do |t|
     t.integer  "customer_id"
@@ -99,14 +99,14 @@ ActiveRecord::Schema.define(:version => 20131201060558) do
   add_index "jobs", ["name"], :name => "index_jobs_on_name", :unique => true
 
   create_table "products", :force => true do |t|
-    t.string   "code",          :null => false
-    t.string   "name",          :null => false
+    t.string   "code",                            :null => false
+    t.string   "name",                            :null => false
     t.integer  "customer_id"
     t.string   "specification"
     t.string   "remark"
-    t.integer  "active"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.boolean  "active",        :default => true
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
   end
 
   add_index "products", ["code"], :name => "index_products_on_code", :unique => true
@@ -128,14 +128,14 @@ ActiveRecord::Schema.define(:version => 20131201060558) do
   add_index "roles_users", ["user_id"], :name => "index_roles_users_on_user_id"
 
   create_table "stock_locations", :force => true do |t|
-    t.integer  "stock_type", :null => false
-    t.string   "building",   :null => false
-    t.integer  "floor",      :null => false
-    t.string   "name",       :null => false
+    t.integer  "stock_type",                   :null => false
+    t.string   "building",                     :null => false
+    t.integer  "floor",                        :null => false
+    t.string   "name",                         :null => false
     t.string   "remark"
-    t.integer  "active"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.boolean  "active",     :default => true
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   add_index "stock_locations", ["stock_type", "building", "floor", "name"], :name => "index_stock_location", :unique => true
@@ -147,21 +147,22 @@ ActiveRecord::Schema.define(:version => 20131201060558) do
     t.integer  "quantity",          :null => false
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+    t.integer  "position"
   end
 
   create_table "stocks", :force => true do |t|
-    t.string   "bill_no",         :null => false
+    t.string   "bill_no",                      :null => false
     t.string   "spare_no"
-    t.date     "handle_date",     :null => false
-    t.integer  "stock_type"
-    t.integer  "type",            :null => false
+    t.date     "handle_date",                  :null => false
+    t.integer  "opt_type",                     :null => false
     t.integer  "workshop_id"
     t.string   "handover_person"
     t.string   "handle_person"
-    t.integer  "status",          :null => false
+    t.string   "status",          :limit => 1, :null => false
     t.string   "remark"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+    t.integer  "stock_type"
   end
 
   create_table "users", :force => true do |t|

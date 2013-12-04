@@ -1,0 +1,9 @@
+%h3= t('title.stock_products')
+%table#stock_products.table.table-striped
+  %thead
+    = render 'stock_products/list_header', :stock => stock
+  %tbody.sortable
+    = f.simple_fields_for :stock_products do |stock_product|
+      = render "#{stock_product.object.class.name.underscore.pluralize}/form", :stock_product => stock_product
+  %tfoot
+    = render 'stock_products/list_footer'

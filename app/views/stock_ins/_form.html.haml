@@ -1,0 +1,17 @@
+= simple_form_for resource do |f|
+  .row-fluid
+    .span6= f.input :bill_no
+    .span6= f.input :spare_no
+  .row-fluid
+    .span6= f.input :handle_date, :as => :date_field
+    .span6= f.input :handle_person
+  .row-fluid
+    .span6= f.input :workshop_id
+    .span6= f.input :handover_person
+  .row-fluid
+    .span12= f.input :remark, :input_html => {:rows => 4}
+
+  = render 'stock_products/list_form', :f => f, :stock => resource
+
+  .form-actions
+    = f.button :submit, :class => 'btn-primary'

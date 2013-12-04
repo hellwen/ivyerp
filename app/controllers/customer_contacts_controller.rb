@@ -1,2 +1,0 @@
-class CustomerContactsController < AuthorizedController
-end

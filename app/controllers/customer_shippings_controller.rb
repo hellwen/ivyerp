@@ -1,2 +1,0 @@
-class CustomerShippingsController < AuthorizedController
-end

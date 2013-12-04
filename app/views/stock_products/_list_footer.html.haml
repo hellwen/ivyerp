@@ -1,0 +1,3 @@
+%tr.stock_product_total
+  %th{:colspan => 2}
+    = link_to t('new_position', scope: 'stock_products'), [:new_stock_product, resource.persisted? ? resource : resource.class.name.underscore.pluralize.to_sym], :remote => true, :class => 'btn'
