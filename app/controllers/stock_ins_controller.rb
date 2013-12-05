@@ -13,9 +13,8 @@ class StockInsController < AuthorizedController
       @stock = resource_class.new
     end
 
-    @stock_product = StockProduct.new()
-    @stock.stock_products << @stock_product
-    
+    @stock_product = @stock.stock_products.new()
+
     respond_with @stock_product
   end
 

@@ -13,8 +13,7 @@ class CustomersController < AuthorizedController
       @customer = resource_class.new
     end
 
-    @customer_shipping = CustomerShipping.new()
-    @customer.customer_shippings << @customer_shipping
+    @customer_shipping = @customer.customer_shippings.new()
     
     respond_with @customer_shipping
   end
@@ -27,8 +26,7 @@ class CustomersController < AuthorizedController
       @customer = resource_class.new
     end
 
-    @customer_contact = CustomerContact.new()
-    @customer.customer_contacts << @customer_contact
+    @customer_contact = @customer.customer_contacts.new()
 
     respond_with @customer_contact
   end

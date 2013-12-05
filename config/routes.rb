@@ -14,14 +14,11 @@ Ivyerp::Application.routes.draw do
     end
   end
 
-  resources :jobs do
-  end
+  resources :jobs
 
-  resources :departments do
-  end
+  resources :departments
 
-  resources :employees do
-  end
+  resources :employees
 
   resources :customers do
     member do
@@ -39,8 +36,7 @@ Ivyerp::Application.routes.draw do
     end
   end
 
-  resources :products do
-  end
+  resources :products
 
   resources :stock_ins do
     member do
@@ -50,6 +46,7 @@ Ivyerp::Application.routes.draw do
       get :new_stock_product
     end
   end
+
   resources :stock_outs do
     member do
       get :new_stock_product
@@ -58,6 +55,8 @@ Ivyerp::Application.routes.draw do
       get :new_stock_product
     end
   end
-  resources :stock_locations do
-  end
+  
+  resources :stock_locations
+
+  resources :inventories, :only => [:index]
 end

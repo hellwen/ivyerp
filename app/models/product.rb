@@ -3,7 +3,7 @@ class Product < ActiveRecord::Base
   validates_presence_of :code, :name, :customer_id
 
   def attr_list
-    [:code, :name, :customer]
+    [:code, :name, :customer, :specification]
   end
 
   belongs_to :customer
