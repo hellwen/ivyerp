@@ -209,6 +209,7 @@ en:
       stock_location: Location
       stock_in: Stock In
       stock_out: Stock Out
+      inventory: Inventory
 
       user: User
       setting: Settings
