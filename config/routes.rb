@@ -26,10 +26,6 @@ Ivyerp::Application.routes.draw do
       get :copy
     end
 
-    member do
-      get :new_customer_shipping
-      get :new_customer_contact
-    end
     collection do
       get :new_customer_shipping
       get :new_customer_contact
@@ -37,6 +33,12 @@ Ivyerp::Application.routes.draw do
   end
 
   resources :products
+
+  resources :stocks do
+    collection do
+      get :inventory
+    end 
+  end
 
   resources :stock_ins do
     member do
@@ -58,5 +60,4 @@ Ivyerp::Application.routes.draw do
   
   resources :stock_locations
 
-  resources :inventories, :only => [:index]
 end
