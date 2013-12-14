@@ -1,0 +1,11 @@
+.contextual
+  = icon_link_to :print, :format => :pdf, :by_text => params[:by_text], :per_page => 10000
+  = contextual_links_for
+
+= boot_page_title
+= render 'search_form'
+
+= paginated_section @inventories do
+  = render 'list'
+
+= render 'inventories/sidebar'

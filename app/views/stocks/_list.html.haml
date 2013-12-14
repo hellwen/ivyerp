@@ -1,0 +1,17 @@
+%table.table.table-striped{:class => "#{collection.first.class.to_s.downcase.pluralize} collection"}
+  %thead
+    %tr
+      %th= t_attr :product_code
+      %th= t_attr :product_name
+      %th= t_attr :product_spec
+      %th= t_attr :customer_name
+      %th= t_attr :quantity
+      %th.action-links
+  %tbody
+    - @inventories.each do |r|
+      %tr
+        %td= r.product_code
+        %td= r.product_name
+        %td= r.product_spec
+        %td= r.customer_name
+        %td= r.quantity
