@@ -26,7 +26,7 @@ Ivyerp::Application.routes.draw do
       get :copy
     end
 
-    collection do
+    member do
       get :new_customer_shipping
       get :new_customer_contact
     end

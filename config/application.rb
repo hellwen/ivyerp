@@ -71,9 +71,13 @@ module Ivyerp
     config.action_view.javascript_expansions[:defaults] += %w(jquery-ui cytooltip jquery.form jquery.dirtyform)
     # List of assets to precompile
     config.assets.precompile += %w( ie.css ie6.css print.css screen.css )
+
+    #config.middleware.use PDFKit::Middleware
+    config.middleware.use PDFKit::Middleware, {}, :except => %r[(letter|payslip)]
     # Engines
     config.ivyerp = ActiveSupport::OrderedOptions.new
     config.ivyerp.engines = []
+
     config.middleware.use 'Ivyerp::Elevator'
   end
 end

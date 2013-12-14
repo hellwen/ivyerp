@@ -1,6 +1,6 @@
 .search-form
   = form_tag params, :method => :get, :class => 'form-search' do
-    = text_field '', :by_text, :autocomplete => 'off', 'data-autofocus' => true, :class => 'search-query input-medium'
+    = text_field '', :by_text, :autocomplete => 'off', 'data-autofocus' => true, :class => 'search-query input-medium', :value => params[:by_text]
     = button_tag :class => 'btn' do
       %i.icon-search
       = t_action('filter')

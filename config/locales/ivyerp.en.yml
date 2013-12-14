@@ -278,7 +278,7 @@ en:
       products: Products
 
       im: Im
-      stocks: Stocks
+      inventory: Inventory
       stock_locations: Locations
 
       settings: Settings
@@ -454,6 +454,9 @@ en:
       title: Employees
     new:
       title: "New Employee"
+  stocks:
+    inventory:
+      title: Inventory
   expenses:
     labels:
       amount: "Amount of sales tax."
