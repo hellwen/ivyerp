@@ -31,6 +31,22 @@ class Stock < ActiveRecord::Base
     StockLocation.all.map { |r| [r.building + '.' + r.floor.to_s + r.name, r.id] }
   end
 
+=begin
+  include AASM
+  aasm do
+    column :status
+    state :draft, :initial => true
+    state :complete
+
+    event :approve do
+      transitions :from => :draft, :to => :complete
+    end
+
+    event :refuse do
+      transitions :from => :complete, :to => :draft
+    end
+  end
+=end
   def to_s
     bill_no.present? ? bill_no : ''
   end

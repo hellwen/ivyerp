@@ -136,15 +136,8 @@ gem 'routing-filter'
 # Application Settings
 gem 'ledermann-rails-settings', '~> 1.1.0', :require => 'rails-settings' # incompatible changes
 
-# Bookyt
-# ======
-# Accounting
-gem 'has_accounts'
-gem 'has_accounts_engine'
 
-# Addresses
-gem 'has_vcards'
-
+#========
 # Uploads
 gem 'carrierwave'
 
@@ -159,14 +152,12 @@ gem 'prawn'
 gem 'prawn_rails'
 
 # Raiffeisen BookingImport
-gem 'fastercsv', :platforms => :ruby_18
-gem 'csv-mapper'
+#gem 'fastercsv', :platforms => :ruby_18
+#gem 'csv-mapper'
+#gem 'mt940_parser', :require => 'mt940'
 
-gem 'mt940_parser', :require => 'mt940'
-
-# ESR support
+# state machine support
 gem 'aasm'
-gem 'vesr'
 
 # Search
 gem 'pg_search'
