@@ -1,3 +1,4 @@
+# encoding: utf-8
 class StockOut < Stock
   default_scope where(:opt_type => 2)
 

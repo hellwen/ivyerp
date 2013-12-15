@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Employee < ActiveRecord::Base
   attr_accessible :sex, :code, :name, :email, :phone, :mobile, :office_location, :job_id, :department_id, :id_card, :home_addr, :date_of_birth, :date_of_leaved, :remark
 

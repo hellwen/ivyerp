@@ -1,3 +1,4 @@
+# encoding: utf-8
 class CustomerContact < ActiveRecord::Base
   attr_accessible :customer_id, :name, :phone, :title, :position
 

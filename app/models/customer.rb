@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Customer < ActiveRecord::Base
   attr_accessible :code, :name, :remark, :customer_shippings_attributes, :customer_contacts_attributes
 

@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Product < ActiveRecord::Base
   attr_accessible :code, :customer_id, :name, :remark, :specification
   validates_presence_of :code, :name, :customer_id

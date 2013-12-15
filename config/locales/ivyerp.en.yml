@@ -1,160 +1,73 @@
 # Translation file for Ivyerp.
----
+---                                                                                 
 en:
-  accounts:
-    edit_bookings:
-      title: Bookings
+  job:
     index:
-      title: Accounts
-    info:
-      title: Account Data
-    journal:
-      title: Journal
+      title: Jobs
+    new:
+      title: New Job
+    edit:
+      title: Edit Job
+  department:
+    index:
+      title: Departments
+    new:
+      title: New Department
+    edit:
+      title: Edit Department
+  employee:
+    index:
+      title: Employees
+    new:
+      title: New Employee
+    edit:
+      title: Edit Employee
+  customer:
+    index:
+      title: Customers
+    new:
+      title: New Customer
+    edit:
+      title: Edit Customer
+  product:
+    index:
+      title: Products
+    new:
+      title: New Product
+    edit:
+      title: Edit Product
+  stock_in:
+    index:
+      title: Stocks In
+    new:
+      title: New Stock In
+    edit:
+      title: Edit Stock In
+  stock_out:
+    index:
+      title: Stocks Out
+    new:
+      title: New Stock Out
+    edit:
+      title: Edit Stock Out
+  stock:
+    inventory:
+      title: Inventory
+  stock_location:
+    index:
+      title: Locations
+    new:
+      title: New Locations
+    edit:
+      title: Edit Locations
   activerecord:
     attributes:
-      attachment:
-        code: "Use as"
-        code_enum:
-          DebitInvoiceDocument: Invoice template
-          LetterDocument: Letter template
-        file: Filename
-      charge_rate:
-        code: code
-        duration: Duration
-        duration_from: "valid from"
-        duration_to: "valid until"
-        person: Person
-        rate: "rate (%)"
-        relative: Relative
-      day:
-        calculate: calculate
-        card_turnover: "card turnover"
-        cash: "cash turnover"
-        client_count: "no. of sales"
-        credit_turnover: "credit turnover"
-        discount: discount
-        expenses: "cash expense"
-        from: from
-        gross_turnover: "gross turnover"
-        net_turnover: "net turnover"
-        product_count: "products sold"
-        total: total
       employee:
         social_security_nr: "Social Security no."
         social_security_nr_12: "Old Social Security no."
-        ssn: SSN-No.
-      employment:
-        daily_workload: "Daily working time (h)"
-        duration_from: Beginning
-        duration_to: End
-        employee: employee
-        employer: employer
-        holiday_premium: "Holiday surcharge (%)"
-        hourly_paid: Hourly wage
-        kids: Children
-        night_premium: "Nigh work supplement (%)"
-        overtime_premium: "Overtime allowance (%)"
-        payment_to: "Payments to"
-        salary_amount: "Gross Salary Amount"
-        sunday_premium: "Sunday premium (%)"
-        temporary: Temporary
-        workload: "Workload (%)"
-
-        messages:
-          inclusion: "is not a valid Value"
-          exclusion: "not available"
-          invalid: "not available"
-          confirmation: "does not coincide with the confirmation"
-          accepted: "must be accepted"
-          empty: "must be completed"
-          blank: "must be completed"
-          too_long: "is too long (no more than %{count} characters))"
-          too_short: "is too short (not less than %{count} characters)"
-          wrong_length: "is the wrong length (must be exactly %{count} characters)"
-          taken: "is already taken"
-          not_a_number: "is not a number"
-          greater_than: "must be greater than %{count} be"
-          greater_than_or_equal_to: "must be greater than or equal to %{count} be"
-          equal_to: "must be exactly %{count}"
-          less_than: "must be less than %{count} be"
-          less_than_or_equal_to: "must be less than or equal to %{count} be"
-          odd: "must be odd"
-          even: "must be even"
-          record_invalid: "Validation failed: %{errors}"
-      esr_file:
-        remarks:    Remarks
-        file:       Filename
-        updated_at: Updated at
-        bookings:   Bookings
-        invalid_bookings: Invalid Bookings
-        missing_bookings: Missing Bookings
-        total_amount: Total (incl. faulty)
-        uploaded_data: File
-      invoice:
-        balance: Balance
-        balance_account: "balance account"
-        biller: "Favor of:"
-        code: "Invoice number"
-        company: Company
-        created_at: "Invoice date"
-        customer: Customer
-        direct_account: account
-        due_date: "Due date"
-        duration_from: from
-        duration_to: to
-        invoice: invoice
-        open_amount: "open amount"
-        profit_account: "profit account"
-        remarks: "Internal remarks"
-        text: text
-        value_date: "Value date"
-      line_item:
-        accounted_amount: Amount
-        price: Price
-        quantity: Quantity
-        times: Times
-        title: Text
-        total_amount: Total
-        vat_rate: "VAT rate"
-      note:
-        content: Content
-        created_at: "Created at"
-        updated_at: "Updated at"
-        user: User
-      person:
-        civil_status: Civil Status
-        country_name: Land
-        date_of_birth: "Date of birth"
-        date_of_death: "Date of death"
-        extended_address: Address
-        full_name: Name
-        locality: Place
-        post_office_box: Post Office
-        postal_code: Zip code
-        region: Region
-        religion: Religion
-        sex: Sex
-        type: type
-      phone_number:
-        website: Website
-      salary:
-        amount: "gross amount"
-        bvg_amount: BVG
-        company: employee
-        customer: employer
-        net_amount: "net amount"
-        social_amount: AHV/IV/EO/ALV/NBU
       tenant:
-        ahv_number: "AHV Billing No."
         company: company
-        fiscal_year_ends_on: "end of first fiscal year"
-        incorporated_on: "incorporation date"
-        payment_period: "Payment term in days"
-        print_payment_for: "\"In favor of\" pay-in slip to print"
-        uid_number: UID-Nummer
-        use_vesr: "VESR for accounts receivable invoices"
         users: users
-        vat_number: VAT No.
       user:
         country_name: Country
         created_at: "created at"
@@ -177,22 +90,6 @@ en:
         roles: roles
         sex: sex
         street_address: "street address"
-      vcard:
-        full_name: "Full name"
-        extended_address: "Address"
-      address:
-        post_office_box:  Post Office Box
-        extended_address: Extended address
-        extended_address: Address
-        street_address:   Street
-        locality:         Locality
-        region:           Region
-        postal_code:      Postal code
-        country_name:     Country
-        address_type:     Art
-      phone_number:
-        number:           Number
-        phone_number_type: Number Type
 
     models:
       overview: Overview
@@ -211,15 +108,11 @@ en:
       stock_out: Stock Out
       inventory: Inventory
 
+      # Setting
       user: User
       setting: Settings
-  alerts:
-    empty: "No Entries to print"
   application:
     title: Ivy
-  attachments:
-    list:
-      title: Attachments
   attributes:
     amount: Amount
     comments: Comments
@@ -228,21 +121,6 @@ en:
     remarks: Remarks
     status: Status
     title: Title
-  booking_imports:
-    new:
-      title: "Import bookings"
-  booking_template:
-    relation:
-      reference_amount: "original amount"
-      reference_amount_minus_balance: "open amount"
-      reference_balance: balance
-  bookings:
-    BookingTemplate:
-      title: "New Booking"
-    index:
-      title: Journal
-    new:
-      title: "Booking record"
   ivyerp:
     all: all
     assets: Assets
@@ -260,16 +138,11 @@ en:
     edit: edit
     equity_capital: "Owner's equity"
     greetings: "Kind regards,"
-    invoices:
-      invoicing_party: "invoicing party"
-      payment_no: "payment no. %{payment_no}"
     main_navigation:
-      overview: Overview
-
       hr: Hr 
       jobs: Jobs
       departments: Departments
-      employee: Employees
+      employees: Employees
 
       sd: Sd 
       customers: Customers
@@ -278,58 +151,23 @@ en:
       products: Products
 
       im: Im
+      stock_ins: Stocks In
+      stock_outs: Stocks Out
       inventory: Inventory
       stock_locations: Locations
 
       settings: Settings
 
       tooltip:
-        account_types: "list all account types (current assets, equity capital, ...)"
-        accounting: "find all functions for accounting here"
-        accounts: "you will find a list of all accounts here"
-        balance: "you can view the balance sheet here"
-        bookings: "you will find all bookings in the journal"
-        companies: "show a list of all companies (tentants)"
-        contacts: "list all contacts"
-        current_tenant: "show details of current tenant (company)"
-        current_user: "show details of the current user"
-        customers: "show a list of all customers"
-        destroy_user_session: "log out from ivyerp"
         employees: "show a list of all employees"
-        importer: "import bookings from a .csv file"
-        invoices: "list all invoices"
-        invoicing: "create and track invoices here"
-        new_booking: "you can add new bookings here"
-        new_customer: "add a new customer"
-        new_employee: "add a new employee"
-        new_invoice: "create new invoice"
-        new_user_session: "log in to ivyerp"
         overview: "show an overview of all functions"
-        people: "show a list of all contacts"
         profit: "you can view the profit sheet here"
         settings: "configure ivyerp here"
-        store: "find all functions for your store here"
         tenant_index: "list all tentants"
         user_index: "list all users"
-    outside_capital: Liabilities
     overview:
       title: Overview
-    profit_report_for: "Profit sheet for %{company} as of %{per}"
     settings:
-      account_types:
-        title: "Account types"
-      book_keeping:
-        title: "Book keeping"
-      booking_templates:
-        title: "Booking templates"
-      charge_booking_templates:
-        title: "Conditional booking templates"
-      charge_rates:
-        title: "Levy rates"
-      due:
-        title: Maturities
-      project_states:
-        title: "Project status"
       tenant:
         title: Client
       user:
@@ -338,56 +176,30 @@ en:
         title: "User management"
     show: show
     total: Total
-  by_period:
-    title: Period
-  by_value_period:
-    all: All
-    title: Booking Filter
   cancan:
     roles:
       accountant: accountant
       admin: administrator
-  companies:
-    index:
-      title: Companies
-  credit_invoices:
-    index:
-      title: Payable
-    new:
-      title: New Credit invoice
   crud:
     action:
-      all_bookings: "All Bookings"
-      balance_sheet: "Balance sheet"
-      book_manual: "Book Manually"
-      copy: copy
+      index: Index
+      new: New
+      edit: Edit
+      delete: Delete
+      show: Show
+      copy: Copy
       filter: Filter
-      letter: letter
-      more: more
-      only_credit_bookings: "Only Credit"
-      only_debit_bookings: "Only Debit"
-      payslip: payslip
+      more: More
       pdf: pdf
-      print: print
-      profit_sheet: "Profit sheet"
-      search: find
-      statistics: statistics
+      print: Print
+      search: Find
+      new_position: New Position
     flash:
       created_html: "created %{message}"
     title:
-      balance_sheet: "balance sheet"
       copy: "copy %{model}"
       current: "current %{model}"
-      letter: letter
-      profit_sheet: "Profit sheet"
       search: find
-      select_booking: "new %{model}"
-      select_booking_template: "new %{model}"
-      statistics: statistics
-      write_downs: "write downs"
-  customers:
-    index:
-      title: Customers
   date:
     formats:
       default: "%d.%m.%Y"
@@ -401,7 +213,7 @@ en:
     abbr_month_names: [~, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
     order:
       - :day
-      - :month
+      - :month                                                                      
       - :year
   datetime:
     distance_in_words:
@@ -446,23 +258,6 @@ en:
       day: "Day"
       month: "Month"
       year: "Year"
-  debit_invoices:
-    index:
-      title: Debit invoices
-  employees:
-    index:
-      title: Employees
-    new:
-      title: "New Employee"
-  stocks:
-    inventory:
-      title: Inventory
-  expenses:
-    labels:
-      amount: "Amount of sales tax."
-      credit_account: Credit account
-      debit_account: Debit account
-      vat_account: VAT account
   flash:
     actions:
       create:
@@ -479,67 +274,9 @@ en:
       other: Other
   helpers:
     submit:
-      create: "%{model} create"
-      submit: "%{model} submit"
-      update: "%{model} update"
-  invoice:
-    state:
-      2xreminded: "Reminded twice"
-      3xreminded: "3x reminded"
-      all: All
-      booked: Open
-      canceled: Cancelled
-      encashment: "In Encashment"
-      overdue: Overdue
-      paid: Paid
-      reactivated: Reactivated
-      reminded: "Reminded once"
-      written_off: Written off
-    state_noun:
-      2xreminded: "2. reminded"
-      3xreminded: "3. reminded"
-      booked: "Recorded statement"
-      canceled: "Voided bill"
-      encashment: Collection
-      overdue: "Overdue accounts"
-      paid: "Received on account"
-      reactivated: "Reactivated account"
-      reminded: "1. reminded"
-      written_off: "Written-off accounts"
-  invoice_state:
-    2xreminded: "2x reminded"
-    3xreminded: "3x reminded"
-    all: All
-    booked: Open
-    canceled: Cancelled
-    encashment: "In Collection"
-    overdue: Overdue
-    paid: Paid
-    reactivated: Re-activated
-    reminded: "1x reminded"
-    title: Invoice filter
-    written_off: Depreciated
-  invoices:
-    list:
-      title: Invoices
-  letters:
-    debit_invoice:
-      closing: "It was a pleasure working together. Please pay this invoice up to %{due_date} using the payment slip or by e-banking to below account."
-      greetings: "Thank you for the cooperation and friendly greetings."
-    greetings: "kind regards,"
-  line_items:
-    quantity:
-      ? "%"
-      : "%"
-      hours: h
-      overall: overall
-      saldo_of: Sum
-      x: x
-    new_position: "New Position"
-    new_subtotal: "New Subtotal"
-  line_shippings:
-    new_position: "New Position"
-    new_subtotal: "New Subtotal"
+      create: "%{model} Create"
+      submit: "%{model} Submit"
+      update: "%{model} Update"
   number:
     format:
       precision: 2
@@ -574,36 +311,17 @@ en:
           mb: "MB"
           gb: "GB"
           tb: "TB"
-  people:
-    index:
-      title: Addresses
-  placeholder:
-    search: Search
   sessions:
     new:
       title: Login
-  settings:
-    vesr:
-      title: "VESR settings"
   sex:
     female: Mrs.
     male: Mr.
-  support:
-    array:
-      words_connector: ", "
-      two_words_connector: " and "
-      last_word_connector: " and "
-    select:
-      prompt: "Please select:"
   tenants:
-    bookings:
-      title: Bookings
     tenant:
       title: Tenant
     user:
       title: User
-    vesr:
-      title: VESR
   time:
     formats:
       default: "%A, %d. %B %Y, %H:%M"
@@ -613,22 +331,3 @@ en:
 
     am: "in the morning"
     pm: "in the afternoon"
-  title:
-    attachments: attachments
-    bookings: bookings
-    invoices: invoices
-    line_items: "Line Items"
-    open_invoices: "open invoices"
-    paid_invoices: "paid invoices"
-    period: Period
-    profit: profit
-  vat_rates:
-    code:
-      excluded: excluded
-      full: normal
-      reduced: reduced
-      special: special
-  vcards:
-    tel_private: 'Tel. private'
-  years:
-    title: Period

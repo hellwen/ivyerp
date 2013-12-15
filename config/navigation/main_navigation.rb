@@ -28,7 +28,7 @@ SimpleNavigation::Configuration.run do |navigation|
 
       im.item :divider_two, "", :class => 'divider'
 
-      im.item :inventories, t('ivyerp.main_navigation.inventories'), inventory_stocks_path
+      im.item :inventories, t('ivyerp.main_navigation.inventory'), inventory_stocks_path
 
       im.item :divider_two, "", :class => 'divider'
 

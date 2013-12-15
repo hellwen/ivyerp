@@ -1,3 +1,4 @@
+# encoding: utf-8
 class CustomerShipping < ActiveRecord::Base
   attr_accessible :address, :customer_id, :name, :position
 

@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Stock < ActiveRecord::Base
   attr_accessible :bill_no, :handle_date, :handle_person, :handover_person, :remark, :spare_no, :status, :stock_type, :opt_type, :workshop_id, :stock_products_attributes
   #validates_presence_of :bill_no, :handle_date, :handle_person, :status, :stock_type, :type, :workshop_id

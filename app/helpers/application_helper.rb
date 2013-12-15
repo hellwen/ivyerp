@@ -158,11 +158,14 @@ EOF
 
   def t_attr(attribute, model = nil)
     if model.is_a? Class
-      model_class = model
+      #model_class = model
+      context = model.name.underscore
     elsif model.nil?
-      model_class = controller_name.classify.constantize
+      #model_class = controller_name.classify.constantize
+      context = controller_name.singularize.underscore
     end
-    model_class.human_attribute_name(attribute)
+    #model_class.human_attribute_name(attribute)
+    I18n::translate("#{context}.#{attribute}")
   end
 
   def t_model(model = nil)
@@ -179,12 +182,13 @@ EOF
   def t_title(action = nil, model = nil)
     action ||= action_name
     if model
-      context = model.name.pluralize.underscore
+      context = model.name.underscore
     else
-      context = controller_name.underscore
+      context = controller_name.singularize.underscore
     end
 
-    I18n::translate("#{context}.#{action}.title", :default => [:"crud.title.#{action}"], :model => t_model(model))
+    I18n::translate("#{context}.#{action}.titl", :default => I18n::t("crud.title.#{action}"))
+    #I18n::translate("#{context}.#{action}.title", :default => [:"crud.title.#{action}"], :model => t_model(model))
   end
   alias :t_crud :t_title
   

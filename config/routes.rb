@@ -22,11 +22,12 @@ Ivyerp::Application.routes.draw do
 
   resources :customers do
     member do
-      get :letter
       get :copy
+      get :new_customer_shipping
+      get :new_customer_contact
     end
 
-    member do
+    collection do
       get :new_customer_shipping
       get :new_customer_contact
     end
