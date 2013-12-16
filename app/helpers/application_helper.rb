@@ -161,18 +161,21 @@ EOF
       #model_class = model
       context = model.name.underscore
     elsif model.nil?
-      #model_class = controller_name.classify.constantize
       context = controller_name.singularize.underscore
     end
-    #model_class.human_attribute_name(attribute)
-    I18n::translate("#{context}.#{attribute}")
+
+    begin
+      I18n::translate("activerecord.attributes.#{context}.#{attribute}", :raise => true)
+    rescue I18n::MissingTranslationData
+      I18n::translate("attributes.#{attribute}")
+    end
   end
 
   def t_model(model = nil)
     if model.is_a? Class
       model_name = model.name.underscore
     elsif model.nil?
-      model_name = controller_name.singularize
+      model_name = controller_name.singularize.underscore
     else
       model_name = model.class.name.underscore
     end
@@ -181,14 +184,13 @@ EOF
 
   def t_title(action = nil, model = nil)
     action ||= action_name
-    if model
-      context = model.name.underscore
-    else
-      context = controller_name.singularize.underscore
-    end
+    #if model
+    #  context = model.name.underscore
+    #else
+    #  context = controller_name.singularize.underscore
+    #end
 
-    I18n::translate("#{context}.#{action}.titl", :default => I18n::t("crud.title.#{action}"))
-    #I18n::translate("#{context}.#{action}.title", :default => [:"crud.title.#{action}"], :model => t_model(model))
+    I18n::translate("crud.title.#{action}", :model => t_model(model))
   end
   alias :t_crud :t_title
   

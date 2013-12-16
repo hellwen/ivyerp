@@ -1,0 +1,358 @@
+# Translation file for Ivyerp.
+---                                                                                 
+zh:
+  attributes:
+    bill_no: 单号
+    code: 编码
+    name: 名称
+    descript: 描述
+    sex: 性别
+    phone: 电话
+    mobile: 手机
+    email: 电子邮箱
+    remark: 备注
+    active: 有效
+    status: 状态
+    address: 地址
+    quantity: 数量
+
+    department: 部门
+    job: 职位
+    customer: 客户
+    workshop: 车间
+    workshop_id: 车间
+    product: 产品
+    product_id: 产品
+    stock_location: 库位
+    stock_location_id: 库位
+
+    product_code: 产品编号
+    product_name: 产品名称
+    product_spec: 规格
+    customer_name: 客户
+
+  messages:
+    confirm_delete: "确定要删除 %{model} %{record} ？"
+
+  activerecord:
+    error:
+      header_message: ["无法保存 {{object_name}}: 1 错误", "无法保存 {{object_name}}: {{count}} 错误."]
+      message: "请检查以下字段:"
+    error_messages:
+      inclusion: "不包含于列表中"
+      exclusion: "不能用"
+      invalid: "不合法"
+      confirmation: "与确认值不匹配"
+      accepted: "必须接受"
+      empty: "不能留空"
+      blank: "不能为空字符"
+      too_long: "过长 (不能超过 {{count}} 个字符)"
+      too_short: "过短 (不能少于 {{count}} 个字符)"
+      wrong_length: "长度非法 (必须为 {{count}} 个字符)"
+      taken: "不可用"
+      not_a_number: "不是数字"
+      greater_than: "必须大于 {{count}}"
+      greater_than_or_equal_to: "必须大于或等于 {{count}}"
+      equal_to: "必须等于 {{count}}"
+      less_than: "必须小于 {{count}}"
+      less_than_or_equal_to: "必须小于或等于 {{count}}"
+      odd: "必须为单数"
+      even: "必须为双数"
+
+    attributes:
+      # HR
+      job:
+        name: 职位
+      department:
+        name: 部门
+      employee:
+        code: 工号
+        name: 姓名
+        office_location: 办公位置
+        department: 部门
+        job: 职位
+        id_card: 身份证
+        home_addr: 家庭地址
+        date_of_birth: 出生日期
+        date_of_leaved: 离职日期
+      # SD
+      customer:
+      # MM
+      product:
+        specification: 规格
+      # IM
+      stock_in:
+        bill_no: 入库单号
+        handle_date: 入库日期
+        handle_person: 操作人
+        spare_no: 手工单号
+        handover_person: 经手人
+      stock_out:
+        bill_no: 出库单号
+        handle_date: 出库日期
+        handle_person: 操作人
+        spare_no: 手工单号
+        handover_person: 经手人
+      stock_location:
+        stock_type: 仓库类型
+        building: 楼号
+        floor: 楼层
+
+      # setting
+      user:
+        current_password: 当前密码
+        email: 电子邮箱
+        name: 用户
+        password: 密码
+        password_confirmation: 重复密码
+        remember_me: 记住用户
+        role_texts: 权限
+        roles: 权限
+        #sex: sex
+        last_sign_in_at: 最近登录时间
+
+    models:
+      overview: Overview
+
+      # HR
+      job: 职位
+      department: 部门
+      employee: 员工
+      # SD
+      customer: 客户
+      # MM
+      product: 产品
+      # IM  
+      stock_location: 库位
+      stock_in: 入库单
+      stock_out: 出库单
+      inventory: 库存
+
+      # Setting
+      user: 用户
+      setting: 设置
+  application:
+    title: Ivy
+  ivyerp:
+    all: all
+    assets: Assets
+    back: back
+    back_to: "Back to %{name}"
+    balance_report_for: "Balance sheet for %{company}"
+    capital: "Liabilites and Equity"
+    capital_assets: "Capital assets"
+    carry_booking: Transfer
+    costs: Costs
+    current_assets: "Current assets"
+    destroy: delete
+    difference: Difference
+    earnings: Earnings
+    edit: edit
+    equity_capital: "Owner's equity"
+    greetings: "Kind regards,"
+    main_navigation:
+      hr: 人事 
+      jobs: 职位
+      departments: 部门
+      employees: 员工
+
+      sd: 销售 
+      customers: 客户
+
+      mm: 物料管理
+      products: 产品
+
+      im: 仓储
+      stock_ins: 入库单
+      stock_outs: 出库单
+      inventory: 库存
+      stock_locations: 库位
+
+      settings: 设置
+
+      tooltip:
+        employees: "show a list of all employees"
+        overview: "show an overview of all functions"
+        profit: "you can view the profit sheet here"
+        settings: "configure ivyerp here"
+        tenant_index: "list all tentants"
+        user_index: "list all users"
+    overview:
+      title: 总览
+    settings:
+      tenant:
+        title: Client
+      user:
+        title: "User preferences"
+      users:
+        title: "User management"
+    show: show
+    total: Total
+  cancan:
+    roles:
+      accountant: accountant
+      admin: administrator
+  crud:
+    action:
+      index: 列表
+      new: 新建
+      edit: 编辑
+      delete: 删除
+      show: 显示
+      copy: 复制
+      filter: 过滤
+      more: 更多
+      pdf: pdf
+      print: 打印
+      search: 查找
+      new_position: 新项目
+    flash:
+      created_html: "created %{message}"
+    title:
+      index: "%{model} 列表"
+      new: "新建 %{model}"
+      edit: "编辑 %{model}"
+      delete: "删除 %{model}"
+      show: "显示 %{model}"
+      copy: "复制 %{model}"
+      current: "current %{model}"
+      search: find
+
+  flash:
+    actions:
+      create:
+        notice_html: "%{resource_name} recorded. %{resource_link}"
+  form:
+    bank:
+      money_transfer: Bank
+    company:
+      address: address
+      book_keeping: "book keeping"
+      invoicing: Billing preferences
+    employee:
+      private: Private
+      other: Other
+  helpers:
+    submit:
+      create: "%{model} Create"
+      submit: "%{model} Submit"
+      update: "%{model} Update"
+  number:
+    format:
+      precision: 2
+      separator: '.'
+      delimiter: ","
+    currency:
+      format:
+        unit: '$'
+        format: '%u %n'
+        separator:
+        delimiter:
+        precision:
+    percentage:
+      format:
+        delimiter: ""
+    precision:
+      format:
+        delimiter: ""
+    human:
+      format:
+        delimiter: ""
+        precision: 1
+      storage_units:
+        # Storage units output formatting.
+        # %u is the storage unit, %n is the number (default: 2 MB)
+        format: "%n %u"
+        units:
+          byte:
+            one:   "Byte"
+            other: "Bytes"
+          kb: "KB"
+          mb: "MB"
+          gb: "GB"
+          tb: "TB"
+  sessions:
+    new:
+      title: Login
+  sex:
+    female: Mrs.
+    male: Mr.
+  tenants:
+    tenant:
+      title: Tenant
+    user:
+      title: User
+
+  # Stantard
+
+  date:
+    formats:                                                                        
+      default: "%Y-%m-%d"
+      short: "%b %e日"
+      long: "%Y年 %B %e日"
+      only_day: "%e日"
+
+    day_names: [星期天 星期一 星期二 星期三 星期四 星期五 星期六]
+    abbr_day_names: [日 一 二 三 四 五 六]
+    month_names: [~, 1月 2月 3月 4月 5月 6月 7月 8月 9月 10月 11月 12月]
+    abbr_month_names: [~, 1月 2月 3月 4月 5月 6月 7月 8月 9月 10月 11月 12月]
+    order: 
+      - :year
+      - :month
+      - :day
+
+  time:
+    formats:
+      default: "%a %b %d %H:%M:%S %Z %Y"
+      time: "%H:%M"
+      short: "%d %b %H:%M"
+      long: "%B %d, %Y %H:%M"
+      only_second: "%S"
+
+      datetime:
+        formats:
+          default: "%Y-%m-%dT%H:%M:%S%Z"
+
+      am: '上午'
+      pm: '下午'
+
+  datetime:
+    distance_in_words:
+      half_a_minute: '半分钟'
+      less_than_x_seconds:
+        zero: '一秒内'
+        other: '{{count}} 秒'
+      x_seconds:
+        other: '{{count}} 秒'
+      less_than_x_minutes:
+        zero: '一分钟内'
+        other: '{{count}} 分钟'
+      x_minutes:
+        other: '{{count}} 分钟'
+      about_x_hours:
+        one: '一小时內'
+        other: '{{count}} 小时'
+      x_days:
+        other: '{{count}} 天'
+      about_x_months:
+        one: ' 一个月内'
+        other: '{{count}} 个月'
+      x_months:
+        other: '{{count}} months'
+      about_x_years:
+        one: ' 1 年内'
+        other: '{{count}} 年'
+      over_x_years:
+        other: '{{count}} 年以上'
+
+  number:
+    format:
+      precision: 3
+      separator: '.'
+      delimiter: ','
+    currency:
+      format:
+        unit: '￥'
+        precision: 2
+        format: '%u %n'
+
