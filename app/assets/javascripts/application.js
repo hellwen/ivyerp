@@ -10,8 +10,6 @@
 //= require twitter/bootstrap
 //= require select2
 //= require best_in_place
-//= require accounting
-//= require accounting-jquery
 //= require bootstrap.datepicker
 //= require_tree .
 
