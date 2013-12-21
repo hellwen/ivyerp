@@ -78,6 +78,6 @@ module Ivyerp
     config.ivyerp = ActiveSupport::OrderedOptions.new
     config.ivyerp.engines = []
 
-    config.middleware.use 'Ivyerp::Elevator'
+    #config.middleware.use 'Ivyerp::Elevator'
   end
 end

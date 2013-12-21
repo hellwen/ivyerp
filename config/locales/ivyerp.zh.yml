@@ -169,6 +169,7 @@ zh:
       stock_locations: 库位
 
       settings: 设置
+      users: 用户
 
       tooltip:
         employees: "show a list of all employees"

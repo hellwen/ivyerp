@@ -36,6 +36,6 @@ SimpleNavigation::Configuration.run do |navigation|
     end
 
     # Hack to get engine navigations included
-    Ivyerp::Engine.setup_navigation(self, primary)
+    #Ivyerp::Engine.setup_navigation(self, primary)
   end
 end

@@ -8,11 +8,11 @@ Ivyerp::Application.routes.draw do
   # Authorization
   devise_for :users
 
-  resources :users do
-    collection do
-      get :current
-    end
-  end
+  #resources :users do
+  #  collection do
+  #    get :current
+  #  end
+  #end
 
   resources :jobs
 

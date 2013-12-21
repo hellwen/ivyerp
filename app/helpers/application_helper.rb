@@ -1,12 +1,5 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
-  # Plugins
-  def engine_stylesheet_link_tag(options = {})
-    Ivyerp::Engine.engines.map {|engine|
-      stylesheet_link_tag engine, options
-    }.join.html_safe
-  end
-
   # Sidebar Filters
   def define_filter(name, &block)
     @filters ||= {}

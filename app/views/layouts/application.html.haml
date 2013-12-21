@@ -6,8 +6,6 @@
 
     = stylesheet_link_tag 'application', :media => 'all'
     = stylesheet_link_tag 'print', :media => 'print'
-    = stylesheet_link_tag 'main', :media => 'screen, projection, print'
-    /= engine_stylesheet_link_tag :media => 'screen, projection, print'
     = javascript_include_tag "application"
 
     = csrf_meta_tag
@@ -15,22 +13,6 @@
       = "#{content_for :page_title} - #{t('application.title')}"
 
   %body
-    .navbar.navbar-fixed-top
-      .navbar-inner
-        .container-fluid
-          %a.btn.btn-navbar{"data-toggle"=>"collapse", "data-target"=>".nav-collapse"}
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          .nav-collapse.collapse.navbar-responsive-collapse
-            %ul.nav
-              %li.active
-                %a{:herf => "#"}= :Home
-              %li.dropdown
-                %a.dropdown-toggle{:herf => "#", "data-toggle"=>"dropdown"}= :Link
-                %li
-                  %a{:herf => "#"}= :Action
-    /
     .navbar.navbar-fixed-top
       .navbar-inner
         .container-fluid
