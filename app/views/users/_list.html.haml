@@ -1,0 +1,14 @@
+%table.table.table-striped{:class => "#{collection.first.class.to_s.downcase.pluralize} collection"}
+  %thead
+    %tr
+      %th= t_attr :email, collection.first.class
+      %td= t_attr :role_texts, collection.first.class
+      %th.action-links
+    %tbody
+      - collection.each do |r|
+        %tr
+          %td= r.email
+          %td= r.role_texts
+          %td.action-links
+            = list_link_icon_for(:edit, r)
+            = list_link_icon_for(:delete, r)

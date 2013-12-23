@@ -43,7 +43,7 @@ class UsersController < AuthorizedController
   end
 
   #def index
-  #  ## perform a paginated query:
+    ## perform a paginated query:
   #  @users = @users.paginate(:page => params[:page])
   #end
 

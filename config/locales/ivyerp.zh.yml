@@ -126,6 +126,7 @@ zh:
       stock_location: 库位
       stock_in: 入库单
       stock_out: 出库单
+      stock: 库存
       inventory: 库存
 
       # Setting
@@ -165,6 +166,7 @@ zh:
       im: 仓储
       stock_ins: 入库单
       stock_outs: 出库单
+      stocks: 库存
       inventory: 库存
       stock_locations: 库位
 
@@ -218,6 +220,8 @@ zh:
       copy: "复制 %{model}"
       current: "current %{model}"
       search: find
+
+      inventory: "%{model}"
 
   flash:
     actions:
@@ -276,8 +280,8 @@ zh:
     new:
       title: Login
   sex:
-    female: Mrs.
-    male: Mr.
+    female: 女
+    male: 男
   tenants:
     tenant:
       title: Tenant
