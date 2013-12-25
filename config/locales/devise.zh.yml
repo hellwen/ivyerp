@@ -48,9 +48,11 @@ zh:
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions about how to unlock it in a few minutes."
       unlocked: "Your account has been unlocked successfully. Please sign in to continue."
 
-    singn_up: Register
-    sign_in:  Login
-    forgot_your_password: Forgot your password?
+    profile: 个人信息
+    singn_up: 注册
+    sign_in:  登录
+    sign_out: 退出
+    forgot_your_password: 忘记密码？
   errors:
     messages:
       already_confirmed: "was already confirmed, please try signing in"

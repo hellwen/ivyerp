@@ -187,9 +187,6 @@ GEM
       rb-inotify (>= 0.9)
     lockfile (2.1.0)
     lumberjack (1.0.4)
-    lyb_devise_admin (0.3.6)
-    lyb_sidebar (0.1.1)
-      rails (~> 3.1)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -337,13 +334,9 @@ GEM
       multi_json (~> 1.0)
       rubyzip (~> 1.0.0)
       websocket (~> 1.0.4)
-    settingslogic (2.0.9)
     sexp_processor (4.4.0)
     shoulda-matchers (2.4.0)
       activesupport (>= 3.0.0)
-    show_for (0.2.6)
-      actionpack (~> 3.0)
-      activemodel (~> 3.0)
     simple-navigation (3.11.0)
       activesupport (>= 2.3.2)
     simple_form (2.1.0)
@@ -436,8 +429,6 @@ DEPENDENCIES
   json_spec
   ledermann-rails-settings (~> 1.1.0)
   libv8
-  lyb_devise_admin
-  lyb_sidebar
   omniauth
   omniauth-google-oauth2
   pdfkit
@@ -461,9 +452,7 @@ DEPENDENCIES
   sass-rails
   select2-rails
   selenium-webdriver
-  settingslogic
   shoulda-matchers
-  show_for
   simple-navigation
   simple_form
   simplecov

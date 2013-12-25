@@ -5,6 +5,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  def attr_list
+    [:email, :role_texts]
+  end
+
   # API
   #devise :token_authenticatable
   #before_save :ensure_authentication_token

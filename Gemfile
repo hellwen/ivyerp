@@ -95,7 +95,6 @@ gem 'haml'
 gem 'simple-navigation'
 
 # Styling
-gem 'lyb_sidebar'
 gem 'anjlab-bootstrap-rails', '~>2.1.0', :require => 'bootstrap-rails'
 gem 'bootstrap-will_paginate'
 
@@ -105,6 +104,7 @@ gem 'select2-rails'
 
 # CRUD
 gem 'will_paginate'
+# Rest API
 gem 'inherited_resources'
 gem 'has_scope'
 gem 'responders'
@@ -115,7 +115,6 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'faraday'
 gem 'cancan', '1.6.8' # issue regarding alias and real action name
-gem 'lyb_devise_admin'
 gem 'apartment'
 
 # API
@@ -126,8 +125,6 @@ gem 'api_taster', '0.6.0'
 
 # Date/Time handling
 gem 'validates_timeliness'
-
-gem 'show_for'
 
 # Locale setting
 gem 'routing-filter'
@@ -167,18 +164,4 @@ gem 'acts-as-taggable-on'
 # Tracking of demo
 group :demo do
   gem 'rack-google_analytics'
-end
-
-# Monitoring
-# ==========
-gem 'settingslogic'
-group :demo do
-  # Traffic
-  gem 'rack-google_analytics'
-
-  # Performance
-  #gem 'newrelic_rpm'
-
-  # Exceptions
-  #gem 'airbrake'
 end

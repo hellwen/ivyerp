@@ -1,6 +1,6 @@
 # Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 
-en:
+zh:
   devise:
     confirmations:
       confirmed: "Your account was successfully confirmed."
@@ -48,8 +48,10 @@ en:
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions about how to unlock it in a few minutes."
       unlocked: "Your account has been unlocked successfully. Please sign in to continue."
 
+    profile: Profile
     singn_up: Register
     sign_in:  Login
+    sign_out: Logout
     forgot_your_password: Forgot your password?
   errors:
     messages:
