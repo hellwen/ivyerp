@@ -1,7 +1,9 @@
 # encoding: utf-8
+require "comm"
+
 class Product < ActiveRecord::Base
   attr_accessible :code, :customer_id, :name, :remark, :specification
-  validates_presence_of :code, :name, :customer_id
+  validates_presence_of :name, :customer_id
 
   #scope :by_name, -> name { where("name like :name", :name => '%' + name + '%') }
   #User.where(users[:name].matches("%#{user_name}%"))
@@ -17,6 +19,13 @@ class Product < ActiveRecord::Base
 
   def self.by_text(text)
     joins(:customer).where("products.name like ? or customers.name like ?", "%" + text + "%", "%" + text + "%")
+  end
+
+  before_create :b_create
+  def b_create
+    return unless code.blank?
+
+    self.code = build_code(Product, 'P', 4)
   end
 
   def to_s

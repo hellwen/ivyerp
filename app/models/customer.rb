@@ -1,6 +1,9 @@
 # encoding: utf-8
+require "comm"
+
 class Customer < ActiveRecord::Base
   attr_accessible :code, :name, :remark, :customer_shippings_attributes, :customer_contacts_attributes
+  validates_presence_of :name
 
   has_many :customer_shippings, :autosave => true, :inverse_of => :customer, :dependent => :destroy
   accepts_nested_attributes_for :customer_shippings, :allow_destroy => true
@@ -13,16 +16,11 @@ class Customer < ActiveRecord::Base
     [:code, :name]
   end
 
-  # Code
-  after_save :update_code
-  def update_code
-    # Only set calculated code if not set, yet
+  before_create :b_create
+  def b_create
     return unless code.blank?
 
-    code = created_at.strftime("%y%m")
-    code += "%04i" % id
-
-    update_column(:code, code)
+    self.code = build_code(Customer, 'C', 4)
   end
 
   # Copying

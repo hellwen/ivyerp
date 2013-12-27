@@ -1,6 +1,6 @@
 = simple_form_for resource do |f|
   .row-fluid
-    .span6= f.input :bill_no
+    .span6= f.input :bill_no, :input_html => {:readonly => true}
     .span6= f.input :spare_no
   .row-fluid
     .span6= f.input :handle_date, :as => :date_field

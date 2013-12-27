@@ -1,10 +1,10 @@
 = simple_form_for @employee do |f|
   .row-fluid
-    .span6= f.input :code
+    .span6= f.input :code, :input_html => {"data-autofocus" => true}
     .span6= f.input :name
   .row-fluid
-    .span6= f.association :department
-    .span6= f.association :job
+    .span6= f.association :department, :as => :combobox
+    .span6= f.association :job, :as => :combobox
   .row-fluid
     .span6= f.input :sex, :as => :select, :collection => { t('sex.male') => Employee::MALE, t('sex.female') => Employee::FEMALE }
     .span6= f.input :phone

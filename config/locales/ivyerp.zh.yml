@@ -38,6 +38,12 @@ zh:
     error:
       header_message: ["无法保存 {{object_name}}: 1 错误", "无法保存 {{object_name}}: {{count}} 错误."]
       message: "请检查以下字段:"
+    errors:
+      models:
+        product:
+          attributes:
+            code:
+              blank: 不能为空
     error_messages:
       inclusion: "不包含于列表中"
       exclusion: "不能用"
@@ -77,6 +83,8 @@ zh:
         date_of_leaved: 离职日期
       # SD
       customer:
+      customer_contact:
+        tital: 抬头
       # MM
       product:
         specification: 规格
@@ -228,15 +236,12 @@ zh:
       create:
         notice_html: "%{resource_name} recorded. %{resource_link}"
   form:
-    bank:
-      money_transfer: Bank
-    company:
-      address: address
-      book_keeping: "book keeping"
-      invoicing: Billing preferences
     employee:
-      private: Private
-      other: Other
+      private: 私人信息
+      other: 其他信息
+    customer:
+      customer_shippings: 发货信息
+      customer_contacts: 联系人
   helpers:
     submit:
       create: "%{model} Create"

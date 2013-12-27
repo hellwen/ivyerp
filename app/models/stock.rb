@@ -1,13 +1,13 @@
 # encoding: utf-8
 class Stock < ActiveRecord::Base
   attr_accessible :bill_no, :handle_date, :handle_person, :handover_person, :remark, :spare_no, :status, :stock_type, :opt_type, :workshop_id, :stock_products_attributes
-  #validates_presence_of :bill_no, :handle_date, :handle_person, :status, :stock_type, :type, :workshop_id
+  validates_presence_of :handle_date, :handle_person
 
   has_many :stock_products, :autosave => true, :inverse_of => :stock, :dependent => :destroy
   accepts_nested_attributes_for :stock_products, :allow_destroy => true
 
   def attr_list                                                                     
-    [:bill_no, :handle_date, :spare_no, :status]
+    [:bill_no, :handle_date, :spare_no]
   end
 
   # Operation type enumeration

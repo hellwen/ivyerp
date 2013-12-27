@@ -1,9 +1,9 @@
 = simple_form_for @product do |f|
   .row-fluid
-    .span6= f.input :code
+    .span6= f.input :code, :input_html => {:readonly => true}
     .span6= f.input :name
   .row-fluid
-    .span6= f.association :customer
+    .span6= f.association :customer, :as => :combobox
     .span6= f.input :specification
   .row-fluid
     .span12= f.input :remark
