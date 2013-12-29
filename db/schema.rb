@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131204154632) do
+ActiveRecord::Schema.define(:version => 20131229145353) do
 
   create_table "customer_contacts", :force => true do |t|
     t.integer  "customer_id"
@@ -178,9 +178,21 @@ ActiveRecord::Schema.define(:version => 20131204154632) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "username"
+    t.integer  "employee_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+  add_index "users", ["username"], :name => "index_users_on_username", :unique => true
+
+  create_table "workshops", :force => true do |t|
+    t.string   "name",       :null => false
+    t.string   "descript"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "workshops", ["name"], :name => "index_workshops_on_name", :unique => true
 
 end

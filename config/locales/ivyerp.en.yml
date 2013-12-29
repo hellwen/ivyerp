@@ -219,10 +219,6 @@ en:
         title: "User management"
     show: show
     total: Total
-  cancan:
-    roles:
-      accountant: accountant
-      admin: administrator
   crud:
     action:
       index: Index

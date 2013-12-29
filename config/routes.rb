@@ -61,4 +61,6 @@ Ivyerp::Application.routes.draw do
   
   resources :stock_locations
 
+  resources :workshops
+
 end

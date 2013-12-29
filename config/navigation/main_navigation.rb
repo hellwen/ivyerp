@@ -35,6 +35,10 @@ SimpleNavigation::Configuration.run do |navigation|
       im.item :stock_locations, t('ivyerp.main_navigation.stock_locations'), stock_locations_path
     end
 
+    primary.item :pm, t('ivyerp.main_navigation.pm'), '#' do |mm|
+      mm.item :workshops, t('ivyerp.main_navigation.workshops'), workshops_path
+    end
+
     # Hack to get engine navigations included
     #Ivyerp::Engine.setup_navigation(self, primary)
   end

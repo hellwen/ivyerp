@@ -3,10 +3,11 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, 
+         :validatable, :authentication_keys => [:login]
 
   def attr_list
-    [:email, :role_texts]
+    [:username, :email, :role_t_texts, :employee]
   end
 
   # API
@@ -14,7 +15,20 @@ class User < ActiveRecord::Base
   #before_save :ensure_authentication_token
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :username, :email, :password, :password_confirmation, :remember_me, :login,  :employee_id
+  validates_presence_of :username, :employee_id
+  attr_accessor :login
+
+  def self.find_first_by_auth_conditions(warden_conditions)
+    conditions = warden_conditions.dup
+    if login = conditions.delete(:login)
+      where(conditions).where(["lower(username) = :value OR lower(email) = :value", { :value => login.downcase }]).first
+    else
+      where(conditions).first
+    end
+  end
+
+  belongs_to :employee
 
   # Authorization roles
   has_and_belongs_to_many :roles, :autosave => true
@@ -30,6 +44,10 @@ class User < ActiveRecord::Base
     roles.map{|role| role.name}
   end
 
+  def role_t_texts
+    roles.map{|role| I18n.translate(role.name, :scope => 'cancan.roles')}
+  end
+
   def role_texts=(role_names)
     self.roles = Role.where(:name => role_names)
   end
@@ -39,6 +57,10 @@ class User < ActiveRecord::Base
 
   # Helpers
   def to_s
-    email
+    if employee.blank?
+      username.present? ? username : ''
+    else
+      employee.present? ? employee : ''
+    end
   end
 end

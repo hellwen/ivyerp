@@ -4,6 +4,10 @@ require "comm"
 class StockOut < Stock
   default_scope where(:opt_type => 2)
 
+  def attr_list
+    [:bill_no, :handle_date, :spare_no]
+  end
+
   before_save :update_default_column
   def update_default_column
     if bill_no.blank?

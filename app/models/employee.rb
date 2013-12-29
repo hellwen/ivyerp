@@ -8,6 +8,7 @@ class Employee < ActiveRecord::Base
 
   belongs_to :job
   belongs_to :department
+  has_one :user
   
   # sex enumeration
   MALE   = 1

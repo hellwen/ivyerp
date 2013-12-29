@@ -9,7 +9,7 @@
 # =============
 Role.create!([
   {:name => 'admin'},
-  {:name => 'accountant'},
+  {:name => 'base'},
 ])
 
 # Test Admin User
@@ -42,4 +42,13 @@ Department.create!([
   {:name => '采购部'},
   {:name => '车间'},
   {:name => '仓库'},
+])
+
+# Workshops
+# =============
+Workshop.create!([
+  {:name => '过胶'},
+  {:name => '打扣'},
+  {:name => '挖孔'},
+  {:name => '点数'},
 ])

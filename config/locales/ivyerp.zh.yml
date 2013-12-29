@@ -5,6 +5,7 @@ zh:
     bill_no: 单号
     code: 编码
     name: 名称
+    employee: 员工
     descript: 描述
     sex: 性别
     phone: 电话
@@ -110,11 +111,13 @@ zh:
       user:
         current_password: 当前密码
         email: 电子邮箱
-        name: 用户
+        username: 用户名
+        login: 用户名/邮箱
         password: 密码
         password_confirmation: 重复密码
         remember_me: 记住用户
         role_texts: 权限
+        role_t_texts: 权限
         roles: 权限
         #sex: sex
         last_sign_in_at: 最近登录时间
@@ -136,6 +139,8 @@ zh:
       stock_out: 出库单
       stock: 库存
       inventory: 库存
+      # PM
+      workshop: 车间
 
       # Setting
       user: 用户
@@ -178,6 +183,9 @@ zh:
       inventory: 库存
       stock_locations: 库位
 
+      pm: 生产管理
+      workshops: 车间
+
       settings: 设置
       users: 用户
 
@@ -199,10 +207,6 @@ zh:
         title: "User management"
     show: show
     total: Total
-  cancan:
-    roles:
-      accountant: accountant
-      admin: administrator
   crud:
     action:
       index: 列表

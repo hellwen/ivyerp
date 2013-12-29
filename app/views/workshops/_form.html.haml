@@ -1,0 +1,8 @@
+= simple_form_for @workshop do |f|
+  .row-fluid
+    .span6= f.input :name
+  .row-fluid
+    .span12= f.input :descript
+
+  .form-actions
+    = f.button :submit, :class => 'btn btn-primary btn-large'

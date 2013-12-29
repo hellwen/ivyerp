@@ -1,3 +1,6 @@
 en:
   cancan:
     access_denied: "Access Deined."
+    roles:
+      admin: Administrator
+      base: Base

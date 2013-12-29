@@ -3,11 +3,12 @@ class Stock < ActiveRecord::Base
   attr_accessible :bill_no, :handle_date, :handle_person, :handover_person, :remark, :spare_no, :status, :stock_type, :opt_type, :workshop_id, :stock_products_attributes
   validates_presence_of :handle_date, :handle_person
 
+  belongs_to :workshop
   has_many :stock_products, :autosave => true, :inverse_of => :stock, :dependent => :destroy
   accepts_nested_attributes_for :stock_products, :allow_destroy => true
 
-  def attr_list                                                                     
-    [:bill_no, :handle_date, :spare_no]
+  def attr_list
+    [:bill_no, :handle_date, :spare_no, :workshop]
   end
 
   # Operation type enumeration

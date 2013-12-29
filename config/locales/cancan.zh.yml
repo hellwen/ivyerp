@@ -1,3 +1,6 @@
 zh:
   cancan:
-    access_denied: "Sie sind nicht berechtigt diese Seite anzuzeigen."
+    access_denied: "您的访问被拒绝，如果需要相应的权限请联系管理员！"
+    roles:
+      admin: 管理员
+      base: 基础
