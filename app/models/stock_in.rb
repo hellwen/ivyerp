@@ -12,7 +12,6 @@ class StockIn < Stock
       self.bill_no = build_bill_no(StockIn, 'SI', 4)
     end
 
-    self.status = 'C'
     self.opt_type = STOCKIN
     self.stock_type = STOCK_TYPE_PRODUCT
   end

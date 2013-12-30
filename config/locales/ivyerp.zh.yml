@@ -246,6 +246,8 @@ zh:
     customer:
       customer_shippings: 发货信息
       customer_contacts: 联系人
+    stock:
+      stock_products: 产品信息
   helpers:
     submit:
       create: "%{model} Create"

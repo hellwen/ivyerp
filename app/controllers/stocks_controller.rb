@@ -14,7 +14,7 @@ class StocksController < AuthorizedController
           end ) as quantity
         from stocks s
         inner join stock_products sp on sp.stock_id = s.id
-        where s.status = 'C'
+        where s.status = 'complete'
         group by sp.product_id
       ) a
       inner join products p on p.id = a.product_id

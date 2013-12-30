@@ -14,7 +14,6 @@ class StockOut < Stock
       self.bill_no = build_bill_no(StockOut, 'SO', 4)
     end
 
-    self.status = 'C'
     self.opt_type = STOCKOUT
     self.stock_type = STOCK_TYPE_PRODUCT
   end
