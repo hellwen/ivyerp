@@ -149,6 +149,10 @@ EOF
     return links.join("\n").html_safe
   end
 
+  def t_aasm(attribute)
+    I18n::translate("aasm.#{attribute}")
+  end
+
   def t_attr(attribute, model = nil)
     if model.is_a? Class
       #model_class = model
@@ -320,7 +324,7 @@ EOF
       actions << :new
     end
 
-    links = actions.map{|link_for| contextual_link_to(link_for, resource_or_model, options)}
+    links = actions.map{|action| contextual_link_to(action, resource_or_model, options)}
 
     return links.join("\n").html_safe
   end
@@ -328,6 +332,29 @@ EOF
   def contextual_links(action = nil, resource_or_model = nil, options = {})
     content_tag('div', :class => 'contextual') do
       contextual_links_for(action, resource_or_model, options)
+    end
+  end
+
+  def contextual_aasms_button(resource_or_model = nil, options = {})
+    model = resource_or_model || controller_name.singularize.camelize.constantize
+
+    links = model.aasm.events.map do |event|
+      classes = []
+      #path = url_for(resource_or_model, :action => 'set_' + event)
+      path = url_for(resource_or_model)
+      classes << "btn btn-success"
+      options.merge!(:class => classes.join(" "))
+      link_to(url_for(path), options) do
+        content_tag(:p, "", :class => "icon-edit") + event
+      end
+    end
+
+    return links.join("\n").html_safe
+  end
+
+  def contextual_aasms(resource_or_model = nil, options = {})
+    content_tag('div', :class => 'state buttons') do
+      contextual_aasms_button(resource_or_model, options)
     end
   end
 end

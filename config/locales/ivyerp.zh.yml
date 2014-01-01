@@ -32,6 +32,12 @@ zh:
     product_spec: 规格
     customer_name: 客户
 
+  aasm:
+    draft: 草稿
+    complete: 完成
+    approve: 审核
+    refuse: 拒绝
+
   messages:
     confirm_delete: "确定要删除 %{model} %{record} ？"
 
