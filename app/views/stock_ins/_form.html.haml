@@ -1,19 +1,5 @@
 = contextual_aasms
 
-%div.state
-  - if resource.draft?
-    %span.badge.badge-success
-      = t_aasm('draft')
-  - else
-    %span.badge
-      = t_aasm('draft')
-  - if resource.complete?
-    %span.badge.badge-success
-      = t_aasm('complete')
-  - else
-    %span.badge
-      = t_aasm('complete')
-
 = simple_form_for resource do |f|
   .row-fluid
     .span6= f.input :bill_no, :input_html => {:readonly => true}
@@ -29,5 +15,6 @@
 
   = render 'stock_products/list_form', :f => f, :stock => resource
 
-  .form-actions
-    = f.button :submit, :class => 'btn-primary'
+  - if action_name != 'show'
+    .form-actions
+      = f.button :submit, :class => 'btn-primary'

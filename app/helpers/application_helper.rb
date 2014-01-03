@@ -335,26 +335,32 @@ EOF
     end
   end
 
-  def contextual_aasms_button(resource_or_model = nil, options = {})
-    model = resource_or_model || controller_name.singularize.camelize.constantize
+  def contextual_aasms_to(resource_or_model = nil)
+    model = resource_or_model || resource
 
-    links = model.aasm.events.map do |event|
-      classes = []
-      #path = url_for(resource_or_model, :action => 'set_' + event)
-      path = url_for(resource_or_model)
-      classes << "btn btn-success"
-      options.merge!(:class => classes.join(" "))
-      link_to(url_for(path), options) do
-        content_tag(:p, "", :class => "icon-edit") + event
+    links = model.aasm.states.map do |state|
+      if model.send("#{state}?")
+        content_tag(:span, t_aasm(state), :class => "badge badge-success")
+      else
+        content_tag(:span, t_aasm(state), :class => "badge")
+      end
+    end
+
+    if action_name == 'show'
+      links += model.aasm.events.map do |event|
+        classes = []
+        link_to(url_for, :class => 'btn') do
+          content_tag(:i) + action_name
+        end
       end
     end
 
     return links.join("\n").html_safe
   end
 
-  def contextual_aasms(resource_or_model = nil, options = {})
-    content_tag('div', :class => 'state buttons') do
-      contextual_aasms_button(resource_or_model, options)
+  def contextual_aasms(resource_or_model = nil)
+    content_tag('div', :class => 'state-bar') do
+      contextual_aasms_to(resource_or_model)
     end
   end
 end
