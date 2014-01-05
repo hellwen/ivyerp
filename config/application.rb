@@ -72,8 +72,9 @@ module Ivyerp
     # List of assets to precompile
     config.assets.precompile += %w( ie.css ie6.css print.css screen.css )
 
-    #config.middleware.use PDFKit::Middleware
-    config.middleware.use PDFKit::Middleware, {}, :except => %r[(letter|payslip)]
+    config.middleware.use PDFKit::Middleware
+    #config.middleware.use PDFKit::Middleware, {}, :except => %r[(letter|payslip)]
+    config.middleware.use PDFKit::Middleware, :print_media_type => true
     # Engines
     config.ivyerp = ActiveSupport::OrderedOptions.new
     config.ivyerp.engines = []
