@@ -14,7 +14,7 @@ Role.create!([
 
 # Test Admin User
 User.create!([
-  {:email => 'test@gmail.com', :password => '1qaz2wsx', :role_texts => ['admin']},
+  {:username => 'test', :email => 'test@gmail.com', :password => '1qaz2wsx', :role_texts => ['admin']},
 ])
 
 # Jobs
